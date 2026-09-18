@@ -1,63 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maa Jagdamba Traders and Hardware - Bakhri, Sitamarhi</title>
+    <title>माँ जगदम्बा ट्रेडर्स एंड हार्डवेयर | Premium Building Materials</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f4f9; color: #333; }
-        header { background-color: #d32f2f; color: white; padding: 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { font-size: 1.1em; margin-top: 10px; }
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        h2 { color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 5px; }
-        .product-list { display: flex; flex-wrap: wrap; gap: 15px; list-style: none; padding: 0; }
-        .product-list li { background: #ffebee; padding: 10px 20px; border-radius: 5px; font-weight: bold; }
-        .contact-info { background: #e0f7fa; padding: 15px; border-radius: 5px; margin-top: 20px; line-height: 1.6; }
-        .whatsapp-btn { display: inline-block; background-color: #25D366; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-size: 1.1em; font-weight: bold; margin-top: 15px; }
-        .footer { text-align: center; margin-top: 30px; font-size: 0.9em; color: #777; }
+        /* Modern Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --primary: #d32f2f;
+            --secondary: #2c3e50;
+            --light: #f4f7f6;
+            --whatsapp: #25D366;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+        body { background-color: var(--light); color: #333; line-height: 1.6; scroll-behavior: smooth; }
+
+        /* Top Navbar */
+        .navbar { background: var(--secondary); color: white; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 100; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+        .navbar h2 { font-size: 1.5rem; letter-spacing: 1px; }
+
+        /* Main Hero Section with Background Image */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1541888081622-4a0fb5b61fbe?w=1200&q=80') center/cover; 
+            color: white; 
+            text-align: center; 
+            padding: 100px 20px; 
+        }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 15px; color: #ffeb3b; }
+        .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+        .btn-main { background: var(--primary); color: white; padding: 12px 30px; text-decoration: none; font-size: 1.1rem; border-radius: 5px; font-weight: bold; transition: 0.3s; box-shadow: 0 4px 6px rgba(0,0,0,0.2); }
+        .btn-main:hover { background: #b71c1c; transform: translateY(-2px); }
+
+        /* Section Headings */
+        .section-title { text-align: center; padding: 50px 20px 20px; font-size: 2.2rem; color: var(--secondary); }
+        .section-title::after { content: ''; display: block; width: 80px; height: 4px; background: var(--primary); margin: 10px auto; border-radius: 5px; }
+
+        /* Product Cards Grid */
+        .products-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 0 5%; max-width: 1200px; margin: auto; }
+        .product-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 20px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 12px 25px rgba(0,0,0,0.2); }
+        .product-card img { width: 100%; height: 220px; object-fit: cover; }
+        .product-info { padding: 20px; text-align: center; }
+        .product-info h3 { color: var(--primary); font-size: 1.4rem; margin-bottom: 8px; }
+        .product-info p { color: #555; font-size: 1rem; }
+
+        /* Contractor Banner */
+        .services { background: var(--secondary); color: white; padding: 50px 20px; text-align: center; margin-top: 60px; }
+        .services h2 { color: #ffeb3b; font-size: 2rem; margin-bottom: 15px; }
+        .services p { font-size: 1.2rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
+
+        /* Contact Details */
+        .contact-container { display: flex; flex-wrap: wrap; gap: 25px; max-width: 1000px; margin: 20px auto 60px; padding: 0 5%; justify-content: center; }
+        .contact-card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); flex: 1; min-width: 300px; text-align: center; }
+        .contact-card h3 { color: var(--primary); margin-bottom: 15px; font-size: 1.5rem; }
+        .contact-card p { font-size: 1.1rem; margin-bottom: 10px; color: #444; }
+        
+        /* Floating WhatsApp Button */
+        .float-wa { position: fixed; bottom: 25px; right: 25px; background: var(--whatsapp); color: white; padding: 15px 25px; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: bold; box-shadow: 0 5px 15px rgba(37,211,102,0.4); z-index: 1000; display: flex; align-items: center; gap: 8px; transition: 0.3s; }
+        .float-wa:hover { background: #128C7E; transform: scale(1.05); }
+
+        /* Footer */
+        footer { background: #1a252f; color: #aaa; text-align: center; padding: 25px; font-size: 0.95rem; }
+        footer span { color: white; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Maa Jagdamba Traders and Hardware</h1>
-        <p>Majboot Ghar Ki Shuruat, Hamare Behtareen Saman Ke Sath!</p>
-    </header>
+    <!-- Navbar -->
+    <div class="navbar">
+        <h2>🏗️ माँ जगदम्बा ट्रेडर्स एंड हार्डवेयर</h2>
+    </div>
 
-    <div class="container">
-        <section>
-            <h2>Hamare Products (Building Materials)</h2>
-            <p>Hamare yahan ghar banane ka sabhi ucch gunwatta (high quality) wala saman thok aur khudara rate par uplabdh hai:</p>
-            <ul class="product-list">
-                <li>Cement (Ultratech, ACC, Ambuja, JK Super)</li>
-                <li>Balu (Sand)</li>
-                <li>Gitti (Crushed Stone)</li>
-                <li>Eent (Bricks)</li>
-                <li>Chhariya / TMT Bar (Sabhi top company ka)</li>
-                <li>Taar (Wire)</li>
-                <li>Construction Chemicals</li>
-            </ul>
-        </section>
+    <!-- Hero / Top Banner -->
+    <div class="hero">
+        <h1>मजबूत घर की शानदार शुरुआत! 🏡</h1>
+        <p>सीतामढ़ी, बखरी में उच्च गुणवत्ता वाले बिल्डिंग मटेरियल का सबसे भरोसेमंद ठिकाना।</p>
+        <a href="#contact" class="btn-main">📞 हमसे संपर्क करें</a>
+    </div>
 
-        <section>
-            <h2>Vishesh Suvidha (Our Services)</h2>
-            <p>🏠 <strong>Ghar Banane Ke Liye Contractor:</strong> Sirf saman hi nahi, balki aapke sapno ka ghar majbooti se banane ke liye hamare paas anubhavi (experienced) Contractor ki suvidha bhi uplabdh hai.</p>
-        </section>
-
-        <section>
-            <h2>Sampark Karein (Contact Us)</h2>
-            <div class="contact-info">
-                <p><strong>📍 Pata:</strong> Bakhri, Bajpatti-Pupri Road, Sitamarhi, Bihar - 843314</p>
-                <p><strong>📞 Mobile Number:</strong> +91 7254083381, +91 9931506981</p>
-                <a href="https://wa.me/917254083381?text=Namaste, mujhe building material ke baare mein jankari chahiye." class="whatsapp-btn">💬 WhatsApp Par Message Karein</a>
+    <!-- Products Section -->
+    <h2 class="section-title">हमारे उत्पाद (Products) 🧱</h2>
+    <div class="products-container">
+        
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1518709779341-56cf4535e94b?w=500&q=80" alt="Cement">
+            <div class="product-info">
+                <h3>सीमेंट (Cement)</h3>
+                <p>Ultratech, ACC, Ambuja, JK Super आदि नंबर 1 क्वालिटी सीमेंट।</p>
             </div>
-        </section>
+        </div>
 
-        <div class="footer">
-            <p>&copy; 2026 Maa Jagdamba Traders and Hardware. All Rights Reserved.</p>
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1621505364115-05562d665b12?w=500&q=80" alt="Sand">
+            <div class="product-info">
+                <h3>बालू (Sand)</h3>
+                <p>मकान की ढलाई और जुड़ाई के लिए बेहतरीन और साफ़ बालू।</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1587155606412-f709f193c767?w=500&q=80" alt="Bricks">
+            <div class="product-info">
+                <h3>ईंट (Bricks)</h3>
+                <p>मजबूत और सही आकार की अच्छी तरह पकी हुई लाल ईंटें।</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1534224039826-c7a0eda0e6b3?w=500&q=80" alt="TMT Bar">
+            <div class="product-info">
+                <h3>छड़ / सरिया (TMT Bars)</h3>
+                <p>सभी नामी कंपनियों के मजबूत और टिकाऊ टीएमटी सरिया।</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&q=80" alt="Construction Materials">
+            <div class="product-info">
+                <h3>गिट्टी व अन्य सामग्री</h3>
+                <p>गिट्टी (Crushed Stone), तार और कंस्ट्रक्शन केमिकल्स।</p>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Contractor Services -->
+    <div class="services">
+        <h2>👷‍♂️ विशेष सुविधा: अनुभवी कॉन्ट्रैक्टर</h2>
+        <p>सिर्फ सामान ही नहीं, बल्कि आपके सपनो का घर मजबूती और ख़ूबसूरती से बनाने के लिए हमारे पास <strong>अनुभवी और भरोसेमंद कॉन्ट्रैक्टर</strong> की सुविधा भी उपलब्ध है।</p>
+    </div>
+
+    <!-- Contact Section -->
+    <h2 class="section-title" id="contact">संपर्क विवरण (Contact) 📍</h2>
+    <div class="contact-container">
+        <div class="contact-card">
+            <h3>पते की जानकारी</h3>
+            <p>📍 <strong>पूरा पता:</strong> बखरी (बखरी), बाजपट्टी-पुपरी रोड</p>
+            <p>सीतामढ़ी, बिहार - 843314</p>
+        </div>
+        <div class="contact-card">
+            <h3>कॉल करें</h3>
+            <p>📞 <strong>+91 7254083381</strong></p>
+            <p>📞 <strong>+91 9931506981</strong></p>
         </div>
     </div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/917254083381?text=नमस्ते,%20मुझे%20बिल्डिंग%20मटेरियल%20के%20बारे%20में%20जानकारी%20चाहिए।" class="float-wa" target="_blank">
+        💬 WhatsApp 
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>माँ जगदम्बा ट्रेडर्स एंड हार्डवेयर</span> | All Rights Reserved.</p>
+    </footer>
 
 </body>
 </html>
