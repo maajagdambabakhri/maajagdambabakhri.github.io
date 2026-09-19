@@ -1,211 +1,273 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maa Jagdamba Traders & Hardware | Premium Building Materials</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Yantramanav:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-dark: #0A192F;
+            --primary-gold: #FFC107;
+            --accent-red: #D32F2F;
+            --text-light: #F8F9FA;
+            --text-dark: #212529;
+            --bg-light: #F4F7F6;
+        }
 
-  <title>Maa Jagdamba Traders & Hardware | Bakhri, Sitamarhi</title>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Yantramanav', 'Montserrat', sans-serif; }
+        
+        body { background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
 
-  <meta name="description"
-    content="Maa Jagdamba Traders & Hardware, Bakhri Bajpatti Sitamarhi. Cement, Sariya, Balu, Gitti, Bricks, Tar, Chemicals एवं घर बनाने के लिए Contractor की सुविधा।">
+        /* Glassmorphism Navbar */
+        .navbar {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(10, 25, 47, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+        .navbar h1 {
+            color: var(--text-light); font-size: 1.8rem; font-weight: 900; letter-spacing: 1px;
+        }
+        .navbar h1 span { color: var(--primary-gold); }
+        .nav-call {
+            background: var(--primary-gold); color: var(--primary-dark);
+            padding: 8px 20px; border-radius: 25px; font-weight: 700;
+            text-decoration: none; transition: 0.3s;
+        }
+        .nav-call:hover { background: white; box-shadow: 0 0 15px var(--primary-gold); }
 
-  <meta name="keywords"
-    content="Maa Jagdamba Traders, Building Material Bakhri, Cement Bakhri, Sariya Bajpatti, Building Material Sitamarhi">
+        /* Dynamic Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), 
+                        url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Crushed_stone_at_quarry.jpg') center/cover fixed;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            text-align: center; color: white; padding: 0 20px;
+        }
+        .hero h2 { font-size: 4rem; font-weight: 900; margin-bottom: 10px; color: var(--primary-gold); text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.5rem; max-width: 800px; margin-bottom: 30px; font-weight: 400; }
+        
+        /* Moving Brands Marquee */
+        .brands-marquee {
+            width: 100%; background: var(--accent-red); color: white;
+            padding: 12px 0; font-size: 1.2rem; font-weight: 700; letter-spacing: 2px;
+            overflow: hidden; white-space: nowrap; position: relative;
+        }
+        .brands-marquee p {
+            display: inline-block; animation: scroll-left 20s linear infinite;
+        }
+        @keyframes scroll-left { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        /* Section Headings */
+        .section-header {
+            text-align: center; padding: 80px 20px 40px;
+        }
+        .section-header h2 {
+            font-size: 2.8rem; color: var(--primary-dark); font-weight: 900;
+        }
+        .section-header div {
+            width: 80px; height: 5px; background: var(--primary-gold); margin: 10px auto; border-radius: 5px;
+        }
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      color: #222;
-      background: #f7f7f7;
-      line-height: 1.6;
-    }
+        /* Premium Products Grid */
+        .product-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; padding: 0 5%; max-width: 1250px; margin: 0 auto;
+        }
+        .product-card {
+            background: white; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: 0.4s;
+            position: relative; border-bottom: 5px solid transparent;
+        }
+        .product-card:hover {
+            transform: translateY(-15px); box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            border-bottom: 5px solid var(--accent-red);
+        }
+        .product-img {
+            width: 100%; height: 250px; object-fit: cover;
+            transition: 0.5s;
+        }
+        .product-card:hover .product-img { transform: scale(1.1); }
+        .img-container { overflow: hidden; }
+        
+        .product-content { padding: 25px; text-align: center; position: relative; z-index: 2; background: white; }
+        .product-content h3 { font-size: 1.8rem; color: var(--primary-dark); margin-bottom: 10px; font-weight: 800; }
+        .product-content p { font-size: 1.1rem; color: #555; font-weight: 600; }
 
-    /* ================= HEADER ================= */
+        /* Premium Services Banner */
+        .service-banner {
+            background: var(--primary-dark); color: white;
+            margin: 100px 5%; padding: 60px 20px; text-align: center;
+            border-radius: 20px; border-left: 8px solid var(--primary-gold);
+            box-shadow: 0 20px 40px rgba(10, 25, 47, 0.4);
+        }
+        .service-banner h2 { font-size: 2.5rem; color: var(--primary-gold); margin-bottom: 15px; }
+        .service-banner p { font-size: 1.3rem; max-width: 900px; margin: auto; }
 
-    header {
-      background: #111827;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 15px rgba(0,0,0,.2);
-    }
+        /* Contact Details Grid */
+        .contact-section { background: white; padding: 80px 5% 100px; margin-top: 50px; }
+        .contact-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; max-width: 1100px; margin: auto;
+        }
+        .contact-box {
+            padding: 40px; border-radius: 15px; background: var(--bg-light);
+            text-align: center; border: 1px solid #ddd; transition: 0.3s;
+        }
+        .contact-box:hover { background: var(--primary-dark); color: white; transform: scale(1.05); }
+        .contact-box h3 { font-size: 1.6rem; margin-bottom: 15px; color: var(--accent-red); }
+        .contact-box:hover h3 { color: var(--primary-gold); }
+        .contact-box p { font-size: 1.2rem; font-weight: 600; }
 
-    .navbar {
-      max-width: 1200px;
-      margin: auto;
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+        /* Floating WhatsApp - Redesigned */
+        .whatsapp-btn {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25D366; color: white; padding: 15px 30px;
+            border-radius: 50px; font-size: 1.3rem; font-weight: 800;
+            text-decoration: none; display: flex; align-items: center; gap: 10px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4); z-index: 1000;
+            animation: bounce 2s infinite; border: 2px solid white;
+        }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
+        /* Footer */
+        footer { background: #050d1a; color: #777; text-align: center; padding: 30px; font-size: 1.1rem; }
+        footer span { color: white; font-weight: bold; }
 
-    .logo-icon {
-      width: 45px;
-      height: 45px;
-      border-radius: 10px;
-      background: #f59e0b;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-    }
+        /* Mobile View */
+        @media (max-width: 768px) {
+            .hero h2 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .navbar h1 { font-size: 1.3rem; }
+            .nav-call { padding: 5px 15px; font-size: 0.9rem; }
+            .whatsapp-btn { padding: 12px 20px; font-size: 1.1rem; bottom: 20px; right: 20px; }
+        }
+    </style>
+</head>
+<body>
 
-    .logo h2 {
-      font-size: 18px;
-      line-height: 1.2;
-    }
+    <!-- Transparent Navbar -->
+    <nav class="navbar">
+        <h1>माँ जगदम्बा <span>ट्रेडर्स</span></h1>
+        <a href="tel:+917254083381" class="nav-call">कॉल करें</a>
+    </nav>
 
-    .logo span {
-      color: #fbbf24;
-      font-size: 12px;
-    }
+    <!-- Hero Section -->
+    <section class="hero">
+        <h2>मजबूत घर की शुरुआत</h2>
+        <p>सीतामढ़ी, बखरी का सबसे भरोसेमंद नाम। थोक और खुदरा (Wholesale & Retail) रेट पर सभी बिल्डिंग मटेरियल उपलब्ध।</p>
+    </section>
 
-    nav {
-      display: flex;
-      gap: 24px;
-    }
+    <!-- Scrolling Brands -->
+    <div class="brands-marquee">
+        <p>✦ ULTRATECH CEMENT ✦ ACC ✦ AMBUJA CEMENT ✦ JK SUPER ✦ TATA TISCON ✦ KAMDHENU ✦ BALMUKUND ✦</p>
+    </div>
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 14px;
-      transition: .3s;
-    }
+    <!-- Products Section -->
+    <div class="section-header">
+        <h2>हमारे उत्पाद (Products)</h2>
+        <div></div>
+    </div>
 
-    nav a:hover {
-      color: #fbbf24;
-    }
+    <div class="product-grid">
+        <!-- Product 1: Cement -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Cement_bags_in_India.jpg" alt="Cement" class="product-img">
+            </div>
+            <div class="product-content">
+                <h3>सीमेंट (Cement)</h3>
+                <p>Ultratech, ACC, Ambuja, JK Super आदि नंबर 1 क्वालिटी सीमेंट।</p>
+            </div>
+        </div>
 
-    .menu-btn {
-      display: none;
-      font-size: 27px;
-      cursor: pointer;
-    }
+        <!-- Product 2: Sand -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Sand_from_Gobi_Desert.jpg" alt="Sand" class="product-img">
+            </div>
+            <div class="product-content">
+                <h3>बालू (Sand)</h3>
+                <p>मकान की ढलाई और जुड़ाई के लिए बेहतरीन और साफ़ उजला/लाल बालू।</p>
+            </div>
+        </div>
 
-    /* ================= HERO ================= */
+        <!-- Product 3: Bricks -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/cd/Bricks_in_a_wall.jpg" alt="Bricks" class="product-img">
+            </div>
+            <div class="product-content">
+                <h3>ईंट (Bricks)</h3>
+                <p>मजबूत, भट्ठे की पकी हुई लाल ईंटें, सही आकार और वजन के साथ।</p>
+            </div>
+        </div>
 
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      background:
-        linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
-      color: white;
-    }
+        <!-- Product 4: TMT Bar -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Rebar_stack.jpg" alt="Sariya" class="product-img">
+            </div>
+            <div class="product-content">
+                <h3>छड़ / सरिया (TMT)</h3>
+                <p>सभी नामी कंपनियों के जंग-रोधी (Rust-free) और टिकाऊ टीएमटी सरिया।</p>
+            </div>
+        </div>
 
-    .hero-content {
-      max-width: 1200px;
-      width: 100%;
-      margin: auto;
-      padding: 80px 20px;
-    }
+        <!-- Product 5: Stone -->
+        <div class="product-card">
+            <div class="img-container">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Crushed_stone_at_quarry.jpg" alt="Gitti" class="product-img">
+            </div>
+            <div class="product-content">
+                <h3>गिट्टी (Crushed Stone)</h3>
+                <p>ढलाई के विशेष काम के लिए बेहतरीन क्वालिटी की स्टोन चिप्स (गिट्टी)।</p>
+            </div>
+        </div>
+    </div>
 
-    .badge {
-      display: inline-block;
-      background: #f59e0b;
-      color: #111;
-      padding: 7px 15px;
-      border-radius: 30px;
-      font-size: 13px;
-      font-weight: bold;
-      margin-bottom: 18px;
-    }
+    <!-- Contractor VIP Banner -->
+    <div class="service-banner">
+        <h2>👷‍♂️ घर बनाने के लिए कॉन्ट्रैक्टर उपलब्ध</h2>
+        <p>सिर्फ सामान ही नहीं, बल्कि आपके सपनो का घर मजबूती और ख़ूबसूरती से बनाने के लिए हमारे पास अनुभवी, कुशल और भरोसेमंद ठेकेदारों (Contractors) की सुविधा भी उपलब्ध है।</p>
+    </div>
 
-    .hero h1 {
-      font-size: clamp(35px, 6vw, 64px);
-      line-height: 1.1;
-      max-width: 800px;
-      margin-bottom: 18px;
-    }
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <div class="section-header">
+            <h2>संपर्क विवरण (Contact)</h2>
+            <div></div>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-box">
+                <h3>📍 दुकान का पता</h3>
+                <p>माँ जगदम्बा ट्रेडर्स एंड हार्डवेयर</p>
+                <p>बखरी (बखरी), बाजपट्टी-पुपरी रोड</p>
+                <p>सीतामढ़ी, बिहार - 843314</p>
+            </div>
+            <div class="contact-box">
+                <h3>📞 कॉल करें</h3>
+                <p>+91 7254083381</p>
+                <p>+91 9931506981</p>
+            </div>
+        </div>
+    </div>
 
-    .hero h1 span {
-      color: #fbbf24;
-    }
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/917254083381?text=नमस्ते,%20मुझे%20बिल्डिंग%20मटेरियल%20के%20बारे%20में%20जानकारी%20चाहिए।" class="whatsapp-btn" target="_blank">
+        💬 WhatsApp 
+    </a>
 
-    .hero p {
-      max-width: 650px;
-      font-size: 18px;
-      color: #eee;
-      margin-bottom: 30px;
-    }
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <span>माँ जगदम्बा ट्रेडर्स एंड हार्डवेयर</span> | All Rights Reserved.</p>
+    </footer>
 
-    .buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 13px 23px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: .3s;
-      border: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #f59e0b;
-      color: #111;
-    }
-
-    .btn-primary:hover {
-      background: #fbbf24;
-      transform: translateY(-2px);
-    }
-
-    .btn-whatsapp {
-      background: #22c55e;
-      color: white;
-    }
-
-    .btn-whatsapp:hover {
-      background: #16a34a;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border: 1px solid white;
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #111;
-    }
-
-    /* ================= INFO BAR ================= */
-
-    .info-bar {
-      background: white;
-      box-shadow: 0 3px 20px rgba(0,0,0,.08);
-      position: relative;
-      margin-top: -45px;
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 15px;
-      display: grid;
-      grid-template-columns: repeat(3, 1
+</body>
+</html>
