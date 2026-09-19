@@ -4,59 +4,41 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Maa Jagdamba Traders and Hardware | Bakhri, Bajpatti</title>
+<meta name="description" content="Maa Jagdamba Traders and Hardware, Bakhri Bajpatti Sitamarhi Bihar - Cement, Sariya, Balu, Bricks, Gitti, Tar, Chemicals and Building Materials. Contractor service available.">
 
-<meta name="description"
-content="Maa Jagdamba Traders and Hardware - Bakhri, Bajpatti, Sitamarhi. Cement, Sariya, Balu, Bricks, Gitti, Wire, Construction Chemicals and House Construction Contractor Service.">
-
-<meta name="theme-color" content="#0b1220">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<title>Maa Jagdamba Traders and Hardware | Bakhri, Sitamarhi</title>
 
 <style>
 
-:root{
-    --dark:#08111f;
-    --dark2:#101c2e;
-    --orange:#f59e0b;
-    --orange2:#ffb52e;
-    --yellow:#ffd166;
-    --blue:#0b5cff;
-    --green:#16a34a;
-    --white:#ffffff;
-    --light:#f7f9fc;
-    --text:#172033;
-    --muted:#667085;
-    --border:#e6eaf0;
-    --shadow:0 20px 60px rgba(15,23,42,.10);
-    --shadow2:0 10px 30px rgba(15,23,42,.08);
-    --radius:24px;
-}
+/* =========================
+   GLOBAL
+========================= */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html{
     scroll-behavior:smooth;
 }
 
-body{
-    font-family:"Inter","Noto Sans Devanagari",sans-serif;
-    color:var(--text);
-    background:#fff;
-    line-height:1.6;
-    overflow-x:hidden;
+:root{
+    --dark:#071b2b;
+    --dark2:#0b2b42;
+    --yellow:#ffd21c;
+    --yellow2:#ffb700;
+    --green:#08b968;
+    --white:#ffffff;
+    --light:#f5f7fa;
+    --text:#1c2935;
+    --muted:#687684;
+    --shadow:0 12px 35px rgba(0,0,0,.12);
 }
 
-img{
-    display:block;
-    width:100%;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:var(--text);
+    overflow-x:hidden;
 }
 
 a{
@@ -64,11 +46,8 @@ a{
     color:inherit;
 }
 
-button,
-input,
-textarea,
-select{
-    font:inherit;
+button{
+    font-family:inherit;
 }
 
 .container{
@@ -77,104 +56,144 @@ select{
 }
 
 /* =========================
+   PAGE LOADER
+========================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:var(--dark);
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    transition:.8s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-logo{
+    width:80px;
+    height:80px;
+    border:4px solid var(--yellow);
+    border-radius:22px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--yellow);
+    font-size:40px;
+    animation:pulse 1.2s infinite;
+}
+
+.loader h3{
+    color:white;
+    margin-top:18px;
+    font-size:20px;
+}
+
+.loader p{
+    color:#a9bdca;
+    margin-top:7px;
+    font-size:13px;
+}
+
+@keyframes pulse{
+    50%{transform:scale(1.08);box-shadow:0 0 35px rgba(255,210,28,.25)}
+}
+
+/* =========================
    HEADER
 ========================= */
 
-.header{
+header{
     position:fixed;
     top:0;
-    left:0;
-    right:0;
+    width:100%;
     z-index:1000;
-    background:rgba(8,17,31,.90);
-    backdrop-filter:blur(18px);
+    background:rgba(5,24,39,.94);
+    backdrop-filter:blur(14px);
     border-bottom:1px solid rgba(255,255,255,.08);
-    transition:.3s;
 }
 
 .nav{
-    height:78px;
+    min-height:72px;
     display:flex;
     align-items:center;
     justify-content:space-between;
-    gap:20px;
 }
 
 .logo{
     display:flex;
     align-items:center;
-    gap:12px;
-    min-width:0;
+    gap:11px;
 }
 
-.logo-mark{
-    width:44px;
-    height:44px;
-    border-radius:14px;
-    background:linear-gradient(135deg,var(--orange),#ff7a00);
-    display:grid;
-    place-items:center;
-    color:#111827;
-    font-weight:900;
-    font-size:18px;
-    box-shadow:0 8px 25px rgba(245,158,11,.25);
-    flex:none;
-}
-
-.logo-text{
-    color:white;
-    line-height:1.15;
+.logo-icon{
+    width:47px;
+    height:47px;
+    border:2px solid var(--yellow);
+    border-radius:13px;
+    color:var(--yellow);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:26px;
 }
 
 .logo-text strong{
     display:block;
-    font-size:15px;
-    font-weight:900;
-    letter-spacing:-.3px;
+    color:#fff;
+    font-size:18px;
+    line-height:1.05;
+}
+
+.logo-text span{
+    color:var(--yellow);
+    font-weight:bold;
+    font-size:13px;
 }
 
 .logo-text small{
     display:block;
-    color:#aeb9ca;
+    color:#b6c4cc;
     font-size:10px;
     margin-top:3px;
 }
 
 .nav-links{
     display:flex;
+    gap:27px;
     align-items:center;
-    gap:28px;
 }
 
 .nav-links a{
-    color:#dce3ee;
+    color:#e8eef2;
     font-size:14px;
     font-weight:600;
-    transition:.25s;
+    transition:.3s;
 }
 
 .nav-links a:hover{
-    color:var(--orange2);
+    color:var(--yellow);
 }
 
-.nav-cta{
-    padding:11px 18px;
-    border-radius:12px;
-    background:var(--orange);
-    color:#111827 !important;
+.nav-call{
+    background:var(--yellow);
+    color:#071b2b !important;
+    padding:11px 17px;
+    border-radius:30px;
     font-weight:800 !important;
 }
 
-.menu-btn{
+.menu{
     display:none;
-    width:44px;
-    height:44px;
-    border:1px solid rgba(255,255,255,.12);
-    background:rgba(255,255,255,.06);
-    border-radius:12px;
-    color:white;
+    color:var(--yellow);
+    font-size:28px;
     cursor:pointer;
-    font-size:22px;
 }
 
 /* =========================
@@ -182,98 +201,76 @@ select{
 ========================= */
 
 .hero{
-    min-height:100vh;
-    padding-top:78px;
-    background:
-        radial-gradient(circle at 80% 15%,rgba(245,158,11,.15),transparent 25%),
-        linear-gradient(135deg,#08111f 0%,#0d192b 55%,#101c2e 100%);
-    color:white;
+    min-height:760px;
+    padding-top:72px;
     position:relative;
+    display:flex;
+    align-items:center;
     overflow:hidden;
+    background:
+    linear-gradient(90deg,rgba(3,20,32,.96) 0%,rgba(3,20,32,.82) 38%,rgba(3,20,32,.35) 72%,rgba(3,20,32,.5)),
+    url("23857.png") center/cover no-repeat;
 }
 
-.hero::before{
+.hero:before{
     content:"";
     position:absolute;
-    width:500px;
-    height:500px;
-    border-radius:50%;
-    background:rgba(245,158,11,.07);
-    right:-200px;
-    top:80px;
-    filter:blur(10px);
-}
-
-.hero-grid{
-    min-height:calc(100vh - 78px);
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    align-items:center;
-    gap:70px;
-    padding:70px 0;
+    inset:0;
+    background:
+    radial-gradient(circle at 80% 25%,rgba(255,210,28,.18),transparent 28%),
+    linear-gradient(180deg,transparent 60%,rgba(3,18,28,.85));
+    pointer-events:none;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
-    animation:heroText .8s ease both;
+    width:min(720px,92%);
+    animation:heroIn 1s ease both;
 }
 
-@keyframes heroText{
-    from{
-        opacity:0;
-        transform:translateY(30px);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
+@keyframes heroIn{
+    from{opacity:0;transform:translateY(35px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
     gap:8px;
-    padding:8px 13px;
-    border:1px solid rgba(245,158,11,.3);
-    background:rgba(245,158,11,.08);
-    color:#ffc65b;
-    border-radius:999px;
-    font-size:12px;
-    font-weight:800;
-    letter-spacing:.5px;
-}
-
-.badge-dot{
-    width:7px;
-    height:7px;
-    border-radius:50%;
-    background:#22c55e;
-    box-shadow:0 0 0 5px rgba(34,197,94,.12);
+    background:rgba(255,210,28,.13);
+    border:1px solid rgba(255,210,28,.55);
+    color:var(--yellow);
+    padding:9px 15px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:bold;
+    margin-bottom:20px;
 }
 
 .hero h1{
-    font-size:clamp(40px,5.3vw,70px);
-    line-height:1.05;
-    letter-spacing:-2.5px;
-    margin:22px 0 20px;
-    font-weight:900;
+    color:white;
+    font-size:clamp(38px,6vw,68px);
+    line-height:1.02;
+    letter-spacing:-2px;
 }
 
 .hero h1 span{
-    color:var(--orange2);
+    color:var(--yellow);
 }
 
-.hero-text{
-    max-width:620px;
-    color:#b9c5d5;
-    font-size:17px;
+.hero-sub{
+    margin-top:22px;
+    color:#d8e1e6;
+    font-size:18px;
+    line-height:1.65;
+    max-width:590px;
 }
 
 .hero-buttons{
     display:flex;
     flex-wrap:wrap;
-    gap:12px;
+    gap:13px;
     margin-top:30px;
 }
 
@@ -282,504 +279,276 @@ select{
     align-items:center;
     justify-content:center;
     gap:9px;
-    padding:14px 20px;
-    border-radius:14px;
+    padding:15px 23px;
+    border-radius:11px;
     font-weight:800;
-    font-size:14px;
-    transition:.25s;
+    border:none;
     cursor:pointer;
-    border:0;
+    transition:.3s;
 }
 
 .btn:hover{
     transform:translateY(-3px);
 }
 
-.btn-primary{
-    background:var(--orange);
-    color:#111827;
-    box-shadow:0 12px 30px rgba(245,158,11,.22);
+.btn-yellow{
+    background:var(--yellow);
+    color:#071b2b;
+    box-shadow:0 10px 25px rgba(255,210,28,.2);
 }
 
-.btn-primary:hover{
-    background:#ffb21f;
-}
-
-.btn-whatsapp{
-    background:#22c55e;
+.btn-green{
+    background:var(--green);
     color:white;
 }
 
 .btn-outline{
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.35);
     color:white;
-    background:rgba(255,255,255,.05);
+    background:rgba(255,255,255,.08);
 }
 
-.hero-points{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:30px;
-}
-
-.hero-point{
-    padding:8px 11px;
-    border-radius:10px;
-    background:rgba(255,255,255,.06);
-    color:#cbd5e1;
-    font-size:12px;
-    border:1px solid rgba(255,255,255,.07);
-}
-
-.hero-visual{
-    position:relative;
-    animation:heroImage 1s .15s ease both;
-}
-
-@keyframes heroImage{
-    from{
-        opacity:0;
-        transform:translateX(35px) scale(.97);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-.hero-image{
-    height:600px;
-    object-fit:cover;
-    border-radius:32px;
-    border:1px solid rgba(255,255,255,.12);
-    box-shadow:0 35px 90px rgba(0,0,0,.35);
-}
-
-.hero-image-overlay{
-    position:absolute;
-    inset:0;
-    border-radius:32px;
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.55),
-        transparent 50%
-    );
-}
-
-.hero-card{
-    position:absolute;
-    left:-30px;
-    bottom:30px;
-    width:250px;
-    padding:18px;
-    border-radius:20px;
-    background:rgba(255,255,255,.94);
-    color:#111827;
-    box-shadow:0 20px 60px rgba(0,0,0,.25);
-    animation:float 4s ease-in-out infinite;
-}
-
-@keyframes float{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-8px)}
-}
-
-.hero-card-top{
+.trust-box{
+    margin-top:35px;
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:18px;
+    color:white;
 }
 
-.hero-card-icon{
-    width:40px;
-    height:40px;
-    border-radius:12px;
-    background:#fff3d6;
-    display:grid;
-    place-items:center;
-    font-size:20px;
+.trust-icons{
+    display:flex;
 }
 
-.hero-card strong{
+.trust-circle{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    background:#f3c91a;
+    color:#071b2b;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-right:-8px;
+    border:3px solid #092034;
+}
+
+.trust-text strong{
+    display:block;
     font-size:14px;
 }
 
-.hero-card small{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
+.trust-text small{
+    color:#aebdc5;
+    font-size:12px;
 }
 
 /* =========================
-   QUICK STRIP
+   STATS
 ========================= */
 
-.quick-strip{
+.stats{
     background:white;
-    border-bottom:1px solid var(--border);
+    box-shadow:0 12px 40px rgba(0,0,0,.08);
     position:relative;
-    z-index:5;
+    z-index:10;
+    margin-top:-55px;
+    border-radius:20px;
+    overflow:hidden;
 }
 
-.quick-grid{
+.stats-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
 }
 
-.quick-item{
-    padding:22px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:12px;
-    border-right:1px solid var(--border);
+.stat{
+    padding:24px;
+    text-align:center;
+    border-right:1px solid #e5eaee;
 }
 
-.quick-item:last-child{
-    border-right:0;
+.stat:last-child{
+    border:0;
 }
 
-.quick-icon{
-    width:42px;
-    height:42px;
-    border-radius:12px;
-    display:grid;
-    place-items:center;
-    background:#fff7e6;
-    font-size:19px;
+.stat strong{
+    font-size:28px;
+    color:var(--dark);
 }
 
-.quick-item strong{
+.stat span{
     display:block;
-    font-size:13px;
-}
-
-.quick-item span{
-    display:block;
-    font-size:11px;
     color:var(--muted);
+    font-size:13px;
+    margin-top:5px;
 }
 
 /* =========================
    SECTION
 ========================= */
 
-.section{
-    padding:100px 0;
+section{
+    padding:85px 0;
 }
 
 .section-head{
-    max-width:700px;
-    margin:0 auto 45px;
-    text-align:center;
-}
-
-.section-label{
-    color:#d98500;
-    font-size:12px;
-    font-weight:900;
-    letter-spacing:1.5px;
-    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:35px;
 }
 
 .section-title{
-    margin-top:10px;
-    font-size:clamp(30px,4vw,46px);
-    line-height:1.1;
-    letter-spacing:-1.5px;
-    color:#0f172a;
+    font-size:clamp(28px,4vw,40px);
+    color:var(--dark);
 }
 
-.section-text{
-    margin-top:13px;
+.section-title span{
+    color:var(--yellow2);
+}
+
+.section-desc{
     color:var(--muted);
-    font-size:15px;
+    max-width:560px;
+    line-height:1.6;
+    margin-top:10px;
 }
 
 /* =========================
    PRODUCTS
 ========================= */
 
-.products-section{
-    background:var(--light);
-}
-
-.filters{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:9px;
-    margin-bottom:35px;
-}
-
-.filter{
-    border:1px solid var(--border);
-    background:white;
-    color:#475467;
-    border-radius:999px;
-    padding:9px 15px;
-    font-size:12px;
-    font-weight:800;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.filter:hover,
-.filter.active{
-    background:#111827;
-    color:white;
-    border-color:#111827;
+.products{
+    background:#fff;
 }
 
 .product-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:20px;
+    gap:18px;
 }
 
 .product-card{
     background:white;
-    border:1px solid #e9edf2;
-    border-radius:22px;
+    border-radius:17px;
     overflow:hidden;
-    box-shadow:0 8px 30px rgba(15,23,42,.05);
+    border:1px solid #e5e9ed;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
     transition:.35s;
-    animation:cardIn .6s ease both;
+    position:relative;
 }
 
 .product-card:hover{
     transform:translateY(-8px);
-    box-shadow:0 22px 50px rgba(15,23,42,.12);
-}
-
-.product-card.hidden{
-    display:none;
-}
-
-@keyframes cardIn{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:none;
-    }
-}
-
-.product-img-wrap{
-    height:210px;
-    overflow:hidden;
-    position:relative;
-    background:#e5e7eb;
+    box-shadow:var(--shadow);
 }
 
 .product-img{
+    height:175px;
+    overflow:hidden;
+    background:#ddd;
+}
+
+.product-img img{
+    width:100%;
     height:100%;
     object-fit:cover;
     transition:.5s;
 }
 
-.product-card:hover .product-img{
-    transform:scale(1.07);
+.product-card:hover img{
+    transform:scale(1.08);
 }
 
-.product-tag{
-    position:absolute;
-    left:13px;
-    top:13px;
-    padding:6px 9px;
-    border-radius:8px;
-    background:rgba(8,17,31,.82);
-    color:white;
-    font-size:10px;
-    font-weight:800;
-    backdrop-filter:blur(8px);
+.product-info{
+    padding:17px;
 }
 
-.product-body{
-    padding:19px;
+.product-icon{
+    font-size:21px;
 }
 
-.product-body h3{
-    font-size:18px;
-    margin-bottom:7px;
+.product-info h3{
+    font-size:17px;
+    margin:7px 0;
+    color:var(--dark);
 }
 
-.product-body p{
+.product-info p{
     color:var(--muted);
     font-size:12px;
-    min-height:42px;
+    line-height:1.5;
 }
 
-.product-brands{
-    display:flex;
-    flex-wrap:wrap;
-    gap:5px;
-    margin:12px 0;
-}
-
-.product-brands span{
-    background:#f4f6f8;
-    color:#475467;
-    padding:4px 7px;
-    border-radius:6px;
-    font-size:9px;
-    font-weight:800;
-}
-
-.product-action{
-    width:100%;
-    padding:10px;
-    border-radius:10px;
-    background:#f7f8fa;
-    border:1px solid #e8ebef;
-    font-size:11px;
-    font-weight:800;
-    text-align:center;
-    transition:.25s;
-}
-
-.product-action:hover{
-    background:#111827;
-    color:white;
+.product-arrow{
+    display:inline-flex;
+    margin-top:13px;
+    width:31px;
+    height:31px;
+    border-radius:50%;
+    align-items:center;
+    justify-content:center;
+    background:#f1f4f6;
 }
 
 /* =========================
-   BRAND SECTION
+   BRANDS
 ========================= */
 
 .brands{
-    padding:70px 0;
-    background:#fff;
+    background:#fffdf2;
 }
 
-.brand-box{
-    border:1px solid var(--border);
-    border-radius:25px;
-    padding:35px;
-    background:
-        radial-gradient(circle at 10% 10%,#fff8e8,transparent 35%),
-        #fff;
-    text-align:center;
-    box-shadow:var(--shadow2);
-}
-
-.brand-list{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:12px;
-    margin-top:25px;
+.brand-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
 }
 
 .brand{
-    padding:14px 22px;
-    border:1px solid #e6eaf0;
-    border-radius:14px;
-    font-size:15px;
-    font-weight:900;
-    background:white;
-    box-shadow:0 5px 15px rgba(15,23,42,.04);
+    background:#fff;
+    border:1px solid #ececec;
+    border-radius:16px;
+    padding:22px 15px;
+    text-align:center;
+    min-height:130px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    transition:.3s;
 }
 
-/* =========================
-   ABOUT
-========================= */
-
-.about{
-    background:#f8fafc;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
-}
-
-.about-image{
-    position:relative;
-}
-
-.about-image img{
-    height:530px;
-    object-fit:cover;
-    border-radius:28px;
+.brand:hover{
+    transform:translateY(-5px);
     box-shadow:var(--shadow);
 }
 
-.about-badge{
-    position:absolute;
-    right:-25px;
-    bottom:25px;
-    background:white;
-    padding:18px 20px;
-    border-radius:18px;
-    box-shadow:0 15px 40px rgba(15,23,42,.14);
-}
-
-.about-badge strong{
-    font-size:25px;
-    color:#111827;
-    display:block;
-}
-
-.about-badge span{
-    font-size:11px;
-    color:var(--muted);
-}
-
-.about-content .section-label{
-    display:block;
-}
-
-.about-content h2{
-    font-size:clamp(30px,4vw,45px);
-    line-height:1.12;
-    margin:10px 0 18px;
-}
-
-.about-content>p{
-    color:var(--muted);
-    font-size:15px;
-}
-
-.check-list{
-    display:grid;
-    gap:13px;
-    margin-top:25px;
-}
-
-.check{
-    display:flex;
-    gap:11px;
-    align-items:flex-start;
-}
-
-.check-icon{
-    flex:none;
-    width:25px;
-    height:25px;
-    border-radius:50%;
-    background:#dcfce7;
-    color:#15803d;
-    display:grid;
-    place-items:center;
-    font-size:13px;
+.brand-name{
+    font-size:27px;
     font-weight:900;
+    color:#e22;
+    font-style:italic;
 }
 
-.check strong{
-    display:block;
-    font-size:13px;
+.brand:nth-child(1) .brand-name{
+    color:#151515;
+    background:#f2df00;
+    display:inline-block;
+    padding:6px;
 }
 
-.check span{
-    display:block;
-    color:var(--muted);
-    font-size:11px;
+.brand:nth-child(3) .brand-name{
+    color:#1e6b36;
+}
+
+.brand:nth-child(4) .brand-name{
+    color:#222;
+}
+
+.brand small{
+    color:#69747d;
+    margin-top:10px;
 }
 
 /* =========================
@@ -787,7 +556,16 @@ select{
 ========================= */
 
 .services{
-    background:white;
+    background:var(--dark);
+    color:white;
+}
+
+.services .section-title{
+    color:white;
+}
+
+.services .section-desc{
+    color:#aabcc7;
 }
 
 .service-grid{
@@ -796,86 +574,227 @@ select{
     gap:20px;
 }
 
-.service{
-    padding:28px;
-    border:1px solid var(--border);
-    border-radius:22px;
-    transition:.3s;
-    background:white;
+.service-card{
+    border:1px solid rgba(255,255,255,.17);
+    background:rgba(255,255,255,.04);
+    border-radius:18px;
+    padding:32px 25px;
+    transition:.35s;
 }
 
-.service:hover{
+.service-card:hover{
     transform:translateY(-6px);
-    box-shadow:var(--shadow2);
+    border-color:rgba(255,210,28,.55);
+    background:rgba(255,255,255,.07);
 }
 
 .service-icon{
-    width:52px;
-    height:52px;
+    width:60px;
+    height:60px;
     border-radius:16px;
-    display:grid;
-    place-items:center;
-    background:#fff5df;
-    font-size:23px;
-    margin-bottom:18px;
+    background:rgba(255,210,28,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:30px;
+    margin-bottom:20px;
 }
 
-.service h3{
-    font-size:18px;
-    margin-bottom:8px;
+.service-card h3{
+    font-size:20px;
+    margin-bottom:10px;
 }
 
-.service p{
-    font-size:13px;
-    color:var(--muted);
+.service-card p{
+    color:#adbec8;
+    line-height:1.6;
+    font-size:14px;
 }
 
 /* =========================
-   GALLERY
+   ABOUT
 ========================= */
 
-.gallery{
-    background:#f8fafc;
+.about{
+    background:#f5f7fa;
 }
 
-.gallery-grid{
+.about-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
-    grid-auto-rows:180px;
-    gap:12px;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
 }
 
-.gallery-item{
-    position:relative;
+.about-image{
+    border-radius:25px;
     overflow:hidden;
-    border-radius:18px;
-    cursor:pointer;
+    height:450px;
+    box-shadow:var(--shadow);
+    position:relative;
 }
 
-.gallery-item.large{
-    grid-column:span 2;
-    grid-row:span 2;
-}
-
-.gallery-item img{
+.about-image img{
     width:100%;
     height:100%;
     object-fit:cover;
-    transition:.5s;
+    object-position:center 60%;
 }
 
-.gallery-item:hover img{
-    transform:scale(1.08);
-}
-
-.gallery-overlay{
+.about-tag{
     position:absolute;
-    inset:auto 0 0;
-    padding:35px 15px 13px;
-    color:white;
-    background:linear-gradient(transparent,rgba(0,0,0,.7));
-    font-size:12px;
+    bottom:20px;
+    left:20px;
+    background:var(--yellow);
+    color:#071b2b;
+    padding:12px 17px;
+    border-radius:10px;
     font-weight:800;
+    font-size:13px;
+}
+
+.about-content h2{
+    font-size:38px;
+    color:var(--dark);
+    line-height:1.15;
+}
+
+.about-content h2 span{
+    color:var(--yellow2);
+}
+
+.about-content p{
+    color:#65737e;
+    line-height:1.75;
+    margin-top:17px;
+}
+
+.check-list{
+    list-style:none;
+    margin-top:23px;
+}
+
+.check-list li{
+    margin:12px 0;
+    color:#33424d;
+    font-weight:600;
+}
+
+.check-list li:before{
+    content:"✓";
+    display:inline-flex;
+    width:24px;
+    height:24px;
+    align-items:center;
+    justify-content:center;
+    background:#e9fff4;
+    color:#00a65c;
+    border-radius:50%;
+    margin-right:10px;
+}
+
+/* =========================
+   ENQUIRY
+========================= */
+
+.enquiry{
+    background:white;
+}
+
+.enquiry-box{
+    background:linear-gradient(135deg,#071b2b,#0b3048);
+    border-radius:28px;
+    padding:45px;
+    box-shadow:var(--shadow);
+}
+
+.enquiry-head{
+    text-align:center;
+    color:white;
+    margin-bottom:30px;
+}
+
+.enquiry-head h2{
+    font-size:34px;
+}
+
+.enquiry-head p{
+    color:#adc0cb;
+    margin-top:9px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:17px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.field.full{
+    grid-column:1/-1;
+}
+
+.field label{
+    color:#e1ebef;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.field input,
+.field select,
+.field textarea{
+    width:100%;
+    border:1px solid rgba(255,255,255,.17);
+    background:rgba(255,255,255,.08);
+    color:white;
+    border-radius:10px;
+    padding:14px;
+    outline:none;
+    font-size:14px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder{
+    color:#91a7b4;
+}
+
+.field select option{
+    color:#111;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+    border-color:var(--yellow);
+}
+
+.field textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.submit{
+    margin-top:22px;
+    width:100%;
+    background:#09b967;
+    color:white;
+    border:none;
+    padding:16px;
+    border-radius:11px;
+    font-size:16px;
+    font-weight:800;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.submit:hover{
+    background:#08a85d;
+    transform:translateY(-2px);
 }
 
 /* =========================
@@ -883,568 +802,363 @@ select{
 ========================= */
 
 .contact{
-    background:#08111f;
-    color:white;
+    background:#f5f7fa;
 }
 
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:35px;
-    align-items:stretch;
+    gap:25px;
 }
 
-.contact-info{
-    padding:35px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.04);
-    border-radius:25px;
-}
-
-.contact-info h2{
-    font-size:36px;
-    line-height:1.1;
-    margin:10px 0 15px;
-}
-
-.contact-info>p{
-    color:#aeb9ca;
-    font-size:14px;
-}
-
-.contact-list{
-    display:grid;
-    gap:12px;
-    margin-top:25px;
+.contact-card{
+    background:white;
+    padding:28px;
+    border-radius:20px;
+    box-shadow:0 5px 22px rgba(0,0,0,.06);
 }
 
 .contact-item{
     display:flex;
-    gap:13px;
-    padding:15px;
-    border-radius:15px;
-    background:rgba(255,255,255,.045);
-    border:1px solid rgba(255,255,255,.06);
+    gap:15px;
+    padding:17px 0;
+    border-bottom:1px solid #edf0f2;
+}
+
+.contact-item:last-child{
+    border:0;
 }
 
 .contact-icon{
-    width:40px;
-    height:40px;
-    border-radius:11px;
-    background:rgba(245,158,11,.12);
-    display:grid;
-    place-items:center;
+    width:44px;
+    height:44px;
     flex:none;
+    border-radius:12px;
+    background:#fff5bd;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
 }
 
 .contact-item strong{
     display:block;
-    font-size:12px;
+    color:var(--dark);
+    margin-bottom:4px;
 }
 
 .contact-item span{
-    display:block;
-    color:#aeb9ca;
-    font-size:11px;
-    margin-top:2px;
+    color:#687680;
+    font-size:13px;
+    line-height:1.5;
 }
 
-.contact-item a{
-    color:#fbbf5a;
+.map-box{
+    min-height:100%;
+    border-radius:20px;
+    overflow:hidden;
+    background:#dfe7ec;
+    position:relative;
 }
 
-.inquiry{
-    background:white;
-    color:#111827;
-    border-radius:25px;
-    padding:30px;
+.map-box iframe{
+    width:100%;
+    height:100%;
+    min-height:380px;
+    border:0;
 }
 
-.inquiry h3{
-    font-size:23px;
-    margin-bottom:6px;
-}
-
-.inquiry>p{
-    color:var(--muted);
-    font-size:12px;
-    margin-bottom:20px;
-}
-
-.form-grid{
-    display:grid;
-    gap:12px;
-}
-
-.field{
-    display:grid;
-    gap:6px;
-}
-
-.field label{
-    font-size:11px;
+.map-button{
+    position:absolute;
+    bottom:18px;
+    right:18px;
+    background:var(--yellow);
+    color:#071b2b;
+    padding:12px 18px;
+    border-radius:10px;
     font-weight:800;
-}
-
-.field input,
-.field select,
-.field textarea{
-    width:100%;
-    border:1px solid #e1e6ec;
-    background:#f9fafb;
-    border-radius:11px;
-    padding:12px;
-    outline:none;
-    color:#111827;
-    font-size:12px;
-    transition:.2s;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus{
-    border-color:var(--orange);
-    background:white;
-    box-shadow:0 0 0 3px rgba(245,158,11,.10);
-}
-
-.field textarea{
-    resize:vertical;
-    min-height:90px;
-}
-
-.form-submit{
-    width:100%;
-    margin-top:5px;
-}
-
-/* =========================
-   MAP CTA
-========================= */
-
-.location{
-    padding:35px 0;
-    background:#0d1726;
-}
-
-.location-box{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:25px;
-    padding:25px;
-    border-radius:22px;
-    border:1px solid rgba(255,255,255,.08);
-    background:rgba(255,255,255,.035);
-}
-
-.location-box h3{
-    color:white;
-    font-size:19px;
-}
-
-.location-box p{
-    color:#9eabbc;
-    font-size:12px;
-    margin-top:3px;
 }
 
 /* =========================
    FOOTER
 ========================= */
 
-.footer{
-    background:#050b14;
+footer{
+    background:#041521;
     color:white;
-    padding:55px 0 25px;
+    padding:40px 0 95px;
 }
 
 .footer-grid{
     display:grid;
-    grid-template-columns:1.4fr 1fr 1fr;
-    gap:40px;
+    grid-template-columns:1.5fr 1fr 1fr;
+    gap:35px;
 }
 
-.footer h3{
-    font-size:14px;
-    margin-bottom:15px;
+.footer-logo{
+    font-size:22px;
+    font-weight:900;
 }
 
-.footer p,
-.footer a{
-    color:#8793a5;
-    font-size:12px;
+.footer-logo span{
+    color:var(--yellow);
 }
 
-.footer a:hover{
-    color:var(--orange2);
+footer p{
+    color:#93a8b4;
+    line-height:1.7;
+    font-size:13px;
+    margin-top:13px;
+}
+
+footer h3{
+    margin-bottom:14px;
+    color:white;
 }
 
 .footer-links{
-    display:grid;
-    gap:8px;
-}
-
-.footer-bottom{
-    margin-top:40px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.08);
-    display:flex;
-    justify-content:space-between;
-    gap:15px;
-    flex-wrap:wrap;
-    color:#697689;
-    font-size:10px;
-}
-
-/* =========================
-   FLOATING BUTTONS
-========================= */
-
-.floating{
-    position:fixed;
-    right:18px;
-    bottom:18px;
-    z-index:900;
     display:flex;
     flex-direction:column;
     gap:10px;
 }
 
-.float-btn{
-    width:52px;
-    height:52px;
-    border-radius:50%;
-    display:grid;
-    place-items:center;
-    color:white;
-    font-size:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.18);
-    transition:.25s;
+.footer-links a{
+    color:#a9bbc5;
+    font-size:13px;
 }
 
-.float-btn:hover{
-    transform:scale(1.08);
-}
-
-.call{
-    background:#2563eb;
-}
-
-.whatsapp{
-    background:#16a34a;
+.footer-links a:hover{
+    color:var(--yellow);
 }
 
 /* =========================
-   LIGHTBOX
+   MOBILE BAR
 ========================= */
 
-.lightbox{
-    position:fixed;
-    inset:0;
-    z-index:2000;
-    background:rgba(0,0,0,.92);
+.mobile-bar{
     display:none;
-    align-items:center;
-    justify-content:center;
-    padding:25px;
+    position:fixed;
+    bottom:0;
+    left:0;
+    right:0;
+    z-index:2000;
+    background:white;
+    box-shadow:0 -5px 20px rgba(0,0,0,.15);
+    padding:8px;
+    gap:7px;
 }
 
-.lightbox.show{
-    display:flex;
+.mobile-bar a{
+    flex:1;
+    padding:13px 5px;
+    border-radius:9px;
+    text-align:center;
+    font-weight:800;
+    font-size:13px;
 }
 
-.lightbox img{
-    max-width:95%;
-    max-height:90vh;
-    width:auto;
-    border-radius:15px;
-    object-fit:contain;
+.mobile-call{
+    background:var(--yellow);
+    color:#071b2b;
 }
 
-.lightbox-close{
-    position:absolute;
-    top:18px;
-    right:20px;
-    width:45px;
-    height:45px;
-    border-radius:50%;
-    background:rgba(255,255,255,.1);
+.mobile-whatsapp{
+    background:#09b967;
     color:white;
-    border:1px solid rgba(255,255,255,.15);
-    font-size:24px;
-    cursor:pointer;
 }
 
 /* =========================
-   SCROLL REVEAL
+   SCROLL ANIMATION
 ========================= */
 
 .reveal{
     opacity:0;
     transform:translateY(30px);
-    transition:opacity .7s ease,transform .7s ease;
+    transition:opacity .8s ease,transform .8s ease;
 }
 
-.reveal.visible{
+.reveal.show{
     opacity:1;
     transform:none;
 }
 
 /* =========================
-   MOBILE
+   RESPONSIVE
 ========================= */
 
-@media(max-width:1000px){
+@media(max-width:900px){
 
     .nav-links{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        right:0;
+        background:#071b2b;
+        flex-direction:column;
+        padding:20px;
         gap:18px;
     }
 
-    .hero-grid{
-        gap:40px;
-    }
-
-    .product-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-
-    .gallery-grid{
-        grid-template-columns:repeat(3,1fr);
-    }
-}
-
-@media(max-width:800px){
-
-    .nav{
-        height:68px;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-
-    .nav-links{
-        position:absolute;
-        top:68px;
-        left:4%;
-        right:4%;
-        display:none;
-        flex-direction:column;
-        align-items:stretch;
-        gap:4px;
-        padding:12px;
-        background:#101a2b;
-        border:1px solid rgba(255,255,255,.1);
-        border-radius:18px;
-        box-shadow:0 20px 50px rgba(0,0,0,.25);
-    }
-
-    .nav-links.show{
+    .nav-links.active{
         display:flex;
     }
 
-    .nav-links a{
-        padding:12px;
-        border-radius:10px;
-    }
-
-    .nav-links a:hover{
-        background:rgba(255,255,255,.06);
+    .menu{
+        display:block;
     }
 
     .hero{
-        padding-top:68px;
+        min-height:690px;
     }
 
-    .hero-grid{
-        grid-template-columns:1fr;
-        min-height:auto;
-        padding:60px 0 80px;
-    }
-
-    .hero h1{
-        font-size:45px;
-    }
-
-    .hero-visual{
-        max-width:650px;
-        width:100%;
-        margin:auto;
-    }
-
-    .hero-image{
-        height:460px;
-    }
-
-    .hero-card{
-        left:15px;
-        bottom:20px;
-    }
-
-    .quick-grid{
+    .stats-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .quick-item:nth-child(2){
+    .stat:nth-child(2){
         border-right:0;
     }
 
-    .quick-item:nth-child(-n+2){
-        border-bottom:1px solid var(--border);
-    }
-
     .product-grid{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-        gap:40px;
+    .brand-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
     .service-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
     }
 
-    .gallery-grid{
-        grid-template-columns:repeat(2,1fr);
-        grid-auto-rows:180px;
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
     }
 
     .footer-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:1fr;
+    }
+
+    .mobile-bar{
+        display:flex;
     }
 }
 
-@media(max-width:560px){
+@media(max-width:600px){
 
-    .container{
-        width:min(92%,440px);
+    section{
+        padding:60px 0;
     }
 
-    .logo-text strong{
-        font-size:12px;
-    }
-
-    .logo-text small{
-        font-size:8px;
-    }
-
-    .logo-mark{
-        width:40px;
-        height:40px;
-    }
-
-    .hero-grid{
-        padding:45px 0 65px;
+    .hero{
+        min-height:710px;
+        background-position:65% center;
     }
 
     .hero h1{
-        font-size:39px;
-        letter-spacing:-1.8px;
+        font-size:42px;
     }
 
-    .hero-text{
-        font-size:14px;
+    .hero-sub{
+        font-size:15px;
     }
 
     .hero-buttons{
-        display:grid;
-        grid-template-columns:1fr 1fr;
+        flex-direction:column;
     }
 
-    .btn{
-        padding:13px 10px;
-        font-size:12px;
+    .hero-buttons .btn{
+        width:100%;
     }
 
-    .hero-image{
-        height:380px;
-        border-radius:23px;
+    .stats{
+        margin-top:-35px;
+        border-radius:15px;
     }
 
-    .hero-card{
-        width:210px;
-        padding:13px;
-        left:10px;
+    .stat{
+        padding:18px 8px;
     }
 
-    .quick-item{
-        padding:17px 8px;
+    .stat strong{
+        font-size:22px;
     }
 
-    .quick-item strong{
+    .stat span{
         font-size:11px;
     }
 
-    .section{
-        padding:70px 0;
-    }
-
-    .section-title{
-        font-size:31px;
+    .section-head{
+        display:block;
     }
 
     .product-grid{
-        grid-template-columns:1fr;
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    .product-img-wrap{
-        height:235px;
+    .product-img{
+        height:125px;
     }
 
-    .service-grid{
-        grid-template-columns:1fr;
+    .product-info{
+        padding:12px;
     }
 
-    .about-image img{
-        height:430px;
+    .product-info h3{
+        font-size:14px;
     }
 
-    .about-badge{
-        right:12px;
-        bottom:15px;
+    .product-info p{
+        font-size:10px;
     }
 
-    .gallery-grid{
-        grid-template-columns:1fr 1fr;
-        grid-auto-rows:145px;
+    .brand-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
     }
 
-    .gallery-item.large{
-        grid-column:span 2;
-        grid-row:span 2;
+    .brand{
+        min-height:105px;
+        padding:13px 7px;
     }
 
-    .contact-info,
-    .inquiry{
-        padding:23px;
+    .brand-name{
+        font-size:21px;
     }
 
-    .contact-info h2{
+    .about-image{
+        height:300px;
+    }
+
+    .about-content h2{
         font-size:29px;
     }
 
-    .location-box{
-        flex-direction:column;
-        align-items:flex-start;
+    .enquiry-box{
+        padding:25px 17px;
+        border-radius:20px;
     }
 
-    .footer-grid{
+    .enquiry-head h2{
+        font-size:26px;
+    }
+
+    .form-grid{
         grid-template-columns:1fr;
-        gap:28px;
     }
 
-    .floating{
-        right:13px;
-        bottom:13px;
+    .field.full{
+        grid-column:auto;
     }
 
-    .float-btn{
-        width:48px;
-        height:48px;
+    footer{
+        padding-bottom:100px;
     }
 }
 
@@ -1453,1090 +1167,823 @@ select{
 
 <body>
 
-<!-- ================= HEADER ================= -->
+<!-- =========================
+     LOADER
+========================= -->
 
-<header class="header">
-
-<div class="container nav">
-
-<a href="#home" class="logo">
-
-<div class="logo-mark">
-MJ
+<div class="loader" id="loader">
+    <div class="loader-logo">⌂</div>
+    <h3>Maa Jagdamba Traders</h3>
+    <p>Building Material & Hardware</p>
 </div>
 
-<div class="logo-text">
-<strong>Maa Jagdamba Traders and Hardware</strong>
-<small>Bakhri • Bajpatti • Sitamarhi</small>
-</div>
 
-</a>
+<!-- =========================
+     HEADER
+========================= -->
 
-<button class="menu-btn" id="menuBtn" aria-label="Menu">
-☰
-</button>
+<header>
+    <div class="container nav">
 
-<nav class="nav-links" id="navLinks">
+        <a href="#" class="logo">
 
-<a href="#home">Home</a>
-<a href="#products">Materials</a>
-<a href="#services">Services</a>
-<a href="#gallery">Photos</a>
-<a href="#about">About</a>
-<a href="#contact" class="nav-cta">Contact</a>
+            <div class="logo-icon">⌂</div>
 
-</nav>
+            <div class="logo-text">
+                <strong>Maa Jagdamba Traders</strong>
+                <span>and Hardware</span>
+                <small>Bakhri, Bajpatti, Sitamarhi (Bihar)</small>
+            </div>
 
-</div>
+        </a>
 
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#enquiry">Enquiry</a>
+            <a href="#contact">Contact</a>
+
+            <a class="nav-call" href="tel:7254083381">
+                ☎ Call Now
+            </a>
+        </nav>
+
+        <div class="menu" onclick="toggleMenu()">☰</div>
+
+    </div>
 </header>
 
 
-<main>
+<!-- =========================
+     HERO
+========================= -->
 
-<!-- ================= HERO ================= -->
+<main>
 
 <section class="hero" id="home">
 
-<div class="container hero-grid">
+    <div class="container">
 
-<div class="hero-content">
+        <div class="hero-content">
 
-<div class="badge">
-<span class="badge-dot"></span>
-BAKHRI • BAJPATTI • SITAMARHI
-</div>
+            <div class="badge">
+                🏆 Trusted Local Building Material Supplier
+            </div>
 
-<h1>
-घर बनाने का जरूरी सामान
-<span>एक ही जगह।</span>
-</h1>
+            <h1>
+                घर की नींव से<br>
+                <span>मजबूत छत तक</span>
+            </h1>
 
-<p class="hero-text">
-Maa Jagdamba Traders and Hardware में Cement, Sariya, Balu, Bricks, Gitti, Wire, Construction Chemicals और House Construction Contractor Service के लिए संपर्क करें।
-</p>
+            <p class="hero-sub">
+                आपके घर और construction के लिए सभी जरूरी
+                Building Materials एक ही जगह पर।
+                Quality Material • उचित कीमत • भरोसेमंद सेवा
+            </p>
 
-<div class="hero-buttons">
+            <div class="hero-buttons">
 
-<a class="btn btn-primary" href="#products">
-🏗️ Materials देखें
-</a>
+                <a href="tel:7254083381" class="btn btn-yellow">
+                    ☎ Call Now
+                </a>
 
-<a class="btn btn-whatsapp"
-href="https://wa.me/917254083381?text=Namaste%20Maa%20Jagdamba%20Traders%20and%20Hardware%2C%20mujhe%20building%20material%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 WhatsApp करें
-</a>
+                <a href="https://wa.me/919931506981?text=Namaste%20Maa%20Jagdamba%20Traders%2C%20mujhe%20building%20material%20ke%20baare%20mein%20jankari%20chahiye." 
+                   target="_blank"
+                   class="btn btn-green">
+                    💬 WhatsApp
+                </a>
 
-</div>
+                <a href="#products" class="btn btn-outline">
+                    Products देखें →
+                </a>
 
-<div class="hero-points">
+            </div>
 
-<div class="hero-point">✓ Cement</div>
-<div class="hero-point">✓ Sariya</div>
-<div class="hero-point">✓ Balu</div>
-<div class="hero-point">✓ Bricks</div>
-<div class="hero-point">✓ Chemicals</div>
-<div class="hero-point">✓ Contractor</div>
+            <div class="trust-box">
 
-</div>
+                <div class="trust-icons">
+                    <div class="trust-circle">✓</div>
+                    <div class="trust-circle">★</div>
+                    <div class="trust-circle">🏠</div>
+                </div>
 
-</div>
+                <div class="trust-text">
+                    <strong>Building Material की पूरी range</strong>
+                    <small>Cement • Sariya • Balu • Bricks • Gitti • Chemicals</small>
+                </div>
 
+            </div>
 
-<div class="hero-visual">
+        </div>
 
-<img
-src="19086.jpg"
-alt="Maa Jagdamba Traders and Hardware shop front"
-class="hero-image"
-fetchpriority="high"
->
-
-<div class="hero-image-overlay"></div>
-
-<div class="hero-card">
-
-<div class="hero-card-top">
-
-<div class="hero-card-icon">
-🏪
-</div>
-
-<div>
-<strong>हमारी अपनी दुकान</strong>
-<small>Bakhri, Bajpatti</small>
-</div>
-
-</div>
-
-<div style="margin-top:12px;color:#667085;font-size:11px;">
-Building materials और construction requirements के लिए सीधे संपर्क करें।
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= QUICK INFO ================= -->
+<!-- =========================
+     STATS
+========================= -->
 
-<section class="quick-strip">
+<div class="container">
+    <div class="stats reveal">
 
-<div class="container quick-grid">
+        <div class="stats-grid">
 
-<div class="quick-item">
+            <div class="stat">
+                <strong>10+</strong>
+                <span>Building Materials</span>
+            </div>
 
-<div class="quick-icon">🏗️</div>
+            <div class="stat">
+                <strong>4+</strong>
+                <span>Major Cement Brands</span>
+            </div>
 
-<div>
-<strong>Building Materials</strong>
-<span>एक जगह पर जरूरी सामग्री</span>
-</div>
+            <div class="stat">
+                <strong>2</strong>
+                <span>WhatsApp / Call Numbers</span>
+            </div>
 
-</div>
+            <div class="stat">
+                <strong>100%</strong>
+                <span>Local Service</span>
+            </div>
 
+        </div>
 
-<div class="quick-item">
-
-<div class="quick-icon">🧱</div>
-
-<div>
-<strong>Cement & Bricks</strong>
-<span>निर्माण सामग्री</span>
-</div>
-
-</div>
-
-
-<div class="quick-item">
-
-<div class="quick-icon">🔩</div>
-
-<div>
-<strong>Sariya & Wire</strong>
-<span>Steel related materials</span>
-</div>
-
+    </div>
 </div>
 
 
-<div class="quick-item">
+<!-- =========================
+     PRODUCTS
+========================= -->
 
-<div class="quick-icon">👷</div>
-
-<div>
-<strong>Contractor Service</strong>
-<span>House construction</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= PRODUCTS ================= -->
-
-<section class="section products-section" id="products">
+<section class="products" id="products">
 
 <div class="container">
 
-<div class="section-head reveal">
+    <div class="section-head reveal">
 
-<span class="section-label">
-Our Materials
-</span>
+        <div>
+            <h2 class="section-title">
+                हमारे <span>प्रमुख उत्पाद</span>
+            </h2>
 
-<h2 class="section-title">
-Construction के लिए जरूरी सामग्री
-</h2>
+            <p class="section-desc">
+                घर, दुकान या किसी भी construction project के लिए
+                जरूरी building materials उपलब्ध हैं।
+            </p>
+        </div>
 
-<p class="section-text">
-घर बनाने से लेकर construction work तक की आवश्यक सामग्री के लिए संपर्क करें।
-</p>
+    </div>
 
-</div>
 
+    <div class="product-grid">
 
-<div class="filters">
 
-<button class="filter active" data-filter="all">
-सभी
-</button>
+        <!-- CEMENT -->
 
-<button class="filter" data-filter="core">
-मुख्य सामग्री
-</button>
+        <div class="product-card reveal">
 
-<button class="filter" data-filter="steel">
-Steel & Wire
-</button>
+            <div class="product-img">
+                <img src="23857.png" alt="Cement">
+            </div>
 
-<button class="filter" data-filter="chemical">
-Chemicals
-</button>
+            <div class="product-info">
+                <div class="product-icon">🏗️</div>
+                <h3>Cement</h3>
+                <p>UltraTech, ACC, Ambuja, JL Super सहित विभिन्न brands.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-<button class="filter" data-filter="service">
-Service
-</button>
+        </div>
 
-</div>
 
+        <!-- SARIYA -->
 
-<div class="product-grid">
+        <div class="product-card reveal">
 
+            <div class="product-img">
+                <img src="23857.png" alt="Sariya Steel">
+            </div>
 
-<!-- CEMENT -->
+            <div class="product-info">
+                <div class="product-icon">🔩</div>
+                <h3>Sariya / Steel</h3>
+                <p>घर की RCC construction के लिए quality TMT Sariya.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-<article class="product-card reveal" data-category="core">
+        </div>
 
-<div class="product-img-wrap">
 
-<img
-src="19084.jpg"
-alt="Cement bags at Maa Jagdamba Traders and Hardware"
-class="product-img"
-loading="lazy"
->
+        <!-- BALU -->
 
-<span class="product-tag">
-CEMENT
-</span>
+        <div class="product-card reveal">
 
-</div>
+            <div class="product-img">
+                <img src="23857.png" alt="Balu Sand">
+            </div>
 
-<div class="product-body">
+            <div class="product-info">
+                <div class="product-icon">🏖️</div>
+                <h3>Balu</h3>
+                <p>Construction और plastering के लिए Balu उपलब्ध.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-<h3>Cement</h3>
+        </div>
 
-<p>
-घर, मकान और अन्य construction work के लिए Cement।
-</p>
 
-<div class="product-brands">
-<span>UltraTech</span>
-<span>ACC</span>
-<span>Ambuja</span>
-<span>JL Super</span>
-</div>
+        <!-- BRICKS -->
 
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Cement%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Cement के लिए पूछें
-</a>
+        <div class="product-card reveal">
 
-</div>
+            <div class="product-img">
+                <img src="23857.png" alt="Bricks">
+            </div>
 
-</article>
+            <div class="product-info">
+                <div class="product-icon">🧱</div>
+                <h3>ईंट</h3>
+                <p>Quality bricks और construction material.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
+        </div>
 
-<!-- SARIYA -->
 
-<article class="product-card reveal" data-category="steel">
+        <!-- GITTI -->
 
-<div class="product-img-wrap">
+        <div class="product-card reveal">
 
-<img
-src="19085.jpg"
-alt="Sariya and construction steel"
-class="product-img"
-loading="lazy"
->
+            <div class="product-img">
+                <img src="23857.png" alt="Gitti Aggregate">
+            </div>
 
-<span class="product-tag">
-SARIYA
-</span>
+            <div class="product-info">
+                <div class="product-icon">⛰️</div>
+                <h3>Gitti</h3>
+                <p>10mm, 20mm और construction aggregate.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-</div>
+        </div>
 
-<div class="product-body">
 
-<h3>Sariya / छड़िया</h3>
+        <!-- TAR -->
 
-<p>
-RCC और house construction के लिए Sariya तथा steel material।
-</p>
+        <div class="product-card reveal">
 
-<div class="product-brands">
-<span>TMT Rebar</span>
-<span>All Major Brands</span>
-</div>
+            <div class="product-img">
+                <img src="23857.png" alt="Tar Wire">
+            </div>
 
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Sariya%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Sariya के लिए पूछें
-</a>
+            <div class="product-info">
+                <div class="product-icon">〰️</div>
+                <h3>Tar / Wire</h3>
+                <p>Binding एवं construction work के लिए तार.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-</div>
+        </div>
 
-</article>
 
+        <!-- CHEMICAL -->
 
-<!-- BALU -->
+        <div class="product-card reveal">
 
-<article class="product-card reveal" data-category="core">
+            <div class="product-img">
+                <img src="23857.png" alt="Construction Chemical">
+            </div>
 
-<div class="product-img-wrap">
+            <div class="product-info">
+                <div class="product-icon">🧪</div>
+                <h3>Construction Chemicals</h3>
+                <p>Waterproofing और construction chemical products.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-<img
-src="20027.jpg"
-alt="Balu and construction material transport"
-class="product-img"
-loading="lazy"
->
+        </div>
 
-<span class="product-tag">
-BALU
-</span>
 
-</div>
+        <!-- OTHER -->
 
-<div class="product-body">
+        <div class="product-card reveal">
 
-<h3>बालू / Sand</h3>
+            <div class="product-img">
+                <img src="23857.png" alt="Building Materials">
+            </div>
 
-<p>
-Construction और घर बनाने के काम के लिए Balu / Sand।
-</p>
+            <div class="product-info">
+                <div class="product-icon">🚚</div>
+                <h3>अन्य सामग्री</h3>
+                <p>आपकी जरूरत के अनुसार अन्य building materials.</p>
+                <span class="product-arrow">→</span>
+            </div>
 
-<div class="product-brands">
-<span>Construction Sand</span>
-<span>Bulk Requirement</span>
-</div>
+        </div>
 
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Balu%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Balu के लिए पूछें
-</a>
-
-</div>
-
-</article>
-
-
-<!-- BRICKS -->
-
-<article class="product-card reveal" data-category="core">
-
-<div class="product-img-wrap">
-
-<img
-src="20028.jpg"
-alt="Bricks near construction material shop"
-class="product-img"
-loading="lazy"
->
-
-<span class="product-tag">
-BRICKS
-</span>
-
-</div>
-
-<div class="product-body">
-
-<h3>ईंट / Bricks</h3>
-
-<p>
-House construction और masonry work के लिए ईंट।
-</p>
-
-<div class="product-brands">
-<span>Building Bricks</span>
-<span>Construction</span>
-</div>
-
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Bricks%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Bricks के लिए पूछें
-</a>
-
-</div>
-
-</article>
-
-
-<!-- GITTI -->
-
-<article class="product-card reveal" data-category="core">
-
-<div class="product-img-wrap">
-
-<img
-src="20027.jpg"
-alt="Gitti construction material"
-class="product-img"
-loading="lazy"
->
-
-<span class="product-tag">
-GITTI
-</span>
-
-</div>
-
-<div class="product-body">
-
-<h3>गिट्टी / Gitti</h3>
-
-<p>
-RCC, slab और अन्य construction work के लिए Gitti।
-</p>
-
-<div class="product-brands">
-<span>Construction Aggregate</span>
-</div>
-
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Gitti%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Gitti के लिए पूछें
-</a>
-
-</div>
-
-</article>
-
-
-<!-- WIRE -->
-
-<article class="product-card reveal" data-category="steel">
-
-<div class="product-img-wrap">
-
-<img
-src="19085.jpg"
-alt="Binding wire and steel material"
-class="product-img"
-loading="lazy"
->
-
-<span class="product-tag">
-WIRE
-</span>
-
-</div>
-
-<div class="product-body">
-
-<h3>तार / Binding Wire</h3>
-
-<p>
-Construction work में इस्तेमाल होने वाले wire और related items।
-</p>
-
-<div class="product-brands">
-<span>Binding Wire</span>
-<span>Steel Accessories</span>
-</div>
-
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Tar%20ya%20Binding%20Wire%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Wire के लिए पूछें
-</a>
-
-</div>
-
-</article>
-
-
-<!-- CHEMICAL -->
-
-<article class="product-card reveal" data-category="chemical">
-
-<div class="product-img-wrap">
-
-<img
-src="19089.jpg"
-alt="Construction chemicals at Maa Jagdamba Traders and Hardware"
-class="product-img"
-loading="lazy"
->
-
-<span class="product-tag">
-CHEMICALS
-</span>
-
-</div>
-
-<div class="product-body">
-
-<h3>Construction Chemicals</h3>
-
-<p>
-Waterproofing और construction related chemical products के लिए संपर्क करें।
-</p>
-
-<div class="product-brands">
-<span>Waterproofing</span>
-<span>Construction Chemical</span>
-</div>
-
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20Construction%20Chemicals%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Chemicals के लिए पूछें
-</a>
-
-</div>
-
-</article>
-
-
-<!-- CONTRACTOR -->
-
-<article class="product-card reveal" data-category="service">
-
-<div class="product-img-wrap">
-
-<img
-src="19089.jpg"
-alt="House construction contractor service"
-class="product-img"
-loading="lazy"
->
-
-<span class="product-tag">
-SERVICE
-</span>
-
-</div>
-
-<div class="product-body">
-
-<h3>House Construction</h3>
-
-<p>
-घर निर्माण के लिए Contractor Service के बारे में जानकारी के लिए संपर्क करें।
-</p>
-
-<div class="product-brands">
-<span>Contractor</span>
-<span>House Construction</span>
-</div>
-
-<a class="product-action"
-href="https://wa.me/917254083381?text=Namaste%2C%20mujhe%20House%20Construction%20Contractor%20Service%20ke%20baare%20mein%20jaankari%20chahiye."
-target="_blank">
-💬 Contractor से पूछें
-</a>
-
-</div>
-
-</article>
-
-
-</div>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ================= BRANDS ================= -->
+<!-- =========================
+     CEMENT BRANDS
+========================= -->
 
 <section class="brands">
 
 <div class="container">
 
-<div class="brand-box reveal">
+    <div class="section-head reveal">
 
-<span class="section-label">
-Cement Brands
-</span>
+        <div>
+            <h2 class="section-title">
+                हमारे प्रमुख <span>Cement Brands</span>
+            </h2>
 
-<h2 class="section-title" style="font-size:34px;">
-उपलब्ध Cement Brands
-</h2>
+            <p class="section-desc">
+                अलग-अलग जरूरत और project के अनुसार cement brands उपलब्ध।
+            </p>
+        </div>
 
-<p class="section-text">
-आपकी जरूरत और उपलब्धता के अनुसार Cement के लिए दुकान पर संपर्क करें।
-</p>
-
-<div class="brand-list">
-
-<div class="brand">UltraTech</div>
-<div class="brand">ACC</div>
-<div class="brand">Ambuja</div>
-<div class="brand">JL Super</div>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+    </div>
 
 
-<!-- ================= ABOUT ================= -->
+    <div class="brand-grid">
 
-<section class="section about" id="about">
+        <div class="brand reveal">
+            <div class="brand-name">UltraTech</div>
+            <small>UltraTech Cement</small>
+        </div>
 
-<div class="container about-grid">
+        <div class="brand reveal">
+            <div class="brand-name">ACC</div>
+            <small>ACC Cement</small>
+        </div>
 
-<div class="about-image reveal">
+        <div class="brand reveal">
+            <div class="brand-name">Ambuja</div>
+            <small>Ambuja Cement</small>
+        </div>
 
-<img
-src="19089.jpg"
-alt="Maa Jagdamba Traders and Hardware shop"
-loading="lazy"
->
+        <div class="brand reveal">
+            <div class="brand-name">JL SUPER</div>
+            <small>JL Super Cement</small>
+        </div>
 
-<div class="about-badge">
-<strong>🏪</strong>
-<span>हमारी अपनी दुकान</span>
-</div>
-
-</div>
-
-
-<div class="about-content reveal">
-
-<span class="section-label">
-About Us
-</span>
-
-<h2>
-आपके निर्माण कार्य के लिए एक भरोसेमंद स्थानीय संपर्क।
-</h2>
-
-<p>
-Maa Jagdamba Traders and Hardware, Bakhri, Bajpatti में building materials और construction requirements के लिए संपर्क करने का स्थान है।
-</p>
-
-<div class="check-list">
-
-<div class="check">
-
-<div class="check-icon">✓</div>
-
-<div>
-<strong>Building Materials</strong>
-<span>Cement, Sariya, Balu, Bricks, Gitti आदि।</span>
-</div>
-
-</div>
-
-
-<div class="check">
-
-<div class="check-icon">✓</div>
-
-<div>
-<strong>Construction Chemicals</strong>
-<span>Construction और waterproofing related requirements।</span>
-</div>
-
-</div>
-
-
-<div class="check">
-
-<div class="check-icon">✓</div>
-
-<div>
-<strong>Contractor Service</strong>
-<span>House construction के लिए contractor service की जानकारी।</span>
-</div>
-
-</div>
-
-
-<div class="check">
-
-<div class="check-icon">✓</div>
-
-<div>
-<strong>Direct Contact</strong>
-<span>Material और requirement के लिए सीधे फोन या WhatsApp करें।</span>
-</div>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ================= SERVICES ================= -->
+<!-- =========================
+     SERVICES
+========================= -->
 
-<section class="section services" id="services">
+<section class="services" id="services">
 
 <div class="container">
 
-<div class="section-head reveal">
+    <div class="section-head reveal">
 
-<span class="section-label">
-Our Services
-</span>
+        <div>
+            <h2 class="section-title">
+                हमारी <span>Services</span>
+            </h2>
 
-<h2 class="section-title">
-सिर्फ सामान नहीं, construction support भी
-</h2>
+            <p class="section-desc">
+                सिर्फ material ही नहीं, construction से जुड़ी जरूरतों में भी सहायता।
+            </p>
+        </div>
 
-<p class="section-text">
-अपने project की जरूरत के अनुसार जानकारी और quotation के लिए संपर्क करें।
-</p>
-
-</div>
+    </div>
 
 
-<div class="service-grid">
+    <div class="service-grid">
 
-<div class="service reveal">
+        <div class="service-card reveal">
 
-<div class="service-icon">
-🧱
-</div>
+            <div class="service-icon">🚚</div>
 
-<h3>Building Material Supply</h3>
+            <h3>Building Material Supply</h3>
 
-<p>
-Cement, Sariya, Balu, Bricks, Gitti और अन्य आवश्यक construction materials के लिए संपर्क करें।
-</p>
+            <p>
+                आपके construction project के लिए जरूरी
+                building materials की supply की सुविधा।
+            </p>
 
-</div>
-
-
-<div class="service reveal">
-
-<div class="service-icon">
-👷
-</div>
-
-<h3>House Construction</h3>
-
-<p>
-घर निर्माण के लिए contractor service के संबंध में जानकारी और चर्चा के लिए संपर्क करें।
-</p>
-
-</div>
+        </div>
 
 
-<div class="service reveal">
+        <div class="service-card reveal">
 
-<div class="service-icon">
-📋
-</div>
+            <div class="service-icon">👷</div>
 
-<h3>Requirement / Quotation</h3>
+            <h3>Contractor Service</h3>
 
-<p>
-आप अपनी material requirement WhatsApp पर भेजकर उपलब्धता और quotation के बारे में पूछ सकते हैं।
-</p>
+            <p>
+                घर बनाने के लिए contractor की जरूरत हो तो
+                संपर्क करें। आपकी requirement के अनुसार
+                contractor service में सहायता।
+            </p>
 
-</div>
+        </div>
 
 
-</div>
+        <div class="service-card reveal">
+
+            <div class="service-icon">💬</div>
+
+            <h3>Quick Enquiry</h3>
+
+            <p>
+                Material, quantity, rate और availability के लिए
+                सीधे Call या WhatsApp पर पूछताछ करें।
+            </p>
+
+        </div>
+
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ================= GALLERY ================= -->
+<!-- =========================
+     ABOUT
+========================= -->
 
-<section class="section gallery" id="gallery">
+<section class="about" id="about">
 
 <div class="container">
 
-<div class="section-head reveal">
+    <div class="about-grid">
 
-<span class="section-label">
-Our Photos
-</span>
+        <div class="about-image reveal">
 
-<h2 class="section-title">
-हमारी दुकान की झलक
-</h2>
+            <img src="23857.png" alt="Maa Jagdamba Traders and Hardware Shop">
 
-<p class="section-text">
-हमारी दुकान, material stock और आसपास की location की वास्तविक photos।
-</p>
+            <div class="about-tag">
+                📍 हमारी दुकान
+            </div>
 
-</div>
+        </div>
 
 
-<div class="gallery-grid">
+        <div class="about-content reveal">
 
-<div class="gallery-item large reveal">
-<img src="19084.jpg" alt="Cement stock">
-<div class="gallery-overlay">Cement Stock</div>
-</div>
+            <h2>
+                आपके construction का
+                <span>भरोसेमंद साथी</span>
+            </h2>
 
+            <p>
+                <strong>Maa Jagdamba Traders and Hardware</strong>
+                बखरी, बाजपट्टी, सीतामढ़ी, बिहार में
+                building material और hardware की दुकान है।
+            </p>
 
-<div class="gallery-item reveal">
-<img src="19089.jpg" alt="Shop front">
-<div class="gallery-overlay">Shop</div>
-</div>
+            <p>
+                घर बनाने के लिए Cement, Sariya, Balu, Bricks,
+                Gitti, Tar, Construction Chemicals और अन्य
+                जरूरी materials के लिए हमसे संपर्क कर सकते हैं।
+            </p>
 
+            <ul class="check-list">
 
-<div class="gallery-item reveal">
-<img src="19086.jpg" alt="Shop exterior">
-<div class="gallery-overlay">Shop Front</div>
-</div>
+                <li>Quality Building Materials</li>
+                <li>कई प्रमुख Cement Brands</li>
+                <li>Material और Quantity की पूछताछ</li>
+                <li>Contractor Service में सहायता</li>
+                <li>Call और WhatsApp Support</li>
 
+            </ul>
 
-<div class="gallery-item reveal">
-<img src="20027.jpg" alt="Construction material transport">
-<div class="gallery-overlay">Material Transport</div>
-</div>
+            <br>
 
+            <a href="#enquiry" class="btn btn-yellow">
+                अपनी Requirement भेजें →
+            </a>
 
-<div class="gallery-item reveal">
-<img src="20028.jpg" alt="Bricks and tractor">
-<div class="gallery-overlay">Bricks & Material</div>
-</div>
+        </div>
 
-
-<div class="gallery-item reveal">
-<img src="20031.jpg" alt="Tractor">
-<div class="gallery-overlay">Transport</div>
-</div>
-
-
-<div class="gallery-item reveal">
-<img src="19085.jpg" alt="Cement and steel">
-<div class="gallery-overlay">Cement & Sariya</div>
-</div>
-
-
-<div class="gallery-item reveal">
-<img src="19087.jpg" alt="Road near shop">
-<div class="gallery-overlay">Bakhri Area</div>
-</div>
-
-</div>
+    </div>
 
 </div>
 
 </section>
 
 
-<!-- ================= CONTACT ================= -->
-
-<section class="section contact" id="contact">
-
-<div class="container contact-grid">
-
-
-<div class="contact-info reveal">
-
-<span class="section-label">
-Contact Us
-</span>
-
-<h2>
-काम शुरू करने से पहले बात कर लें।
-</h2>
-
-<p>
-Material requirement, availability, quotation या house construction service के लिए सीधे संपर्क करें।
-</p>
-
-
-<div class="contact-list">
-
-<div class="contact-item">
-
-<div class="contact-icon">📞</div>
-
-<div>
-<strong>Phone</strong>
-
-<span>
-<a href="tel:7254083381">7254083381</a>
-&nbsp; / &nbsp;
-<a href="tel:9931506981">9931506981</a>
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">💬</div>
-
-<div>
-<strong>WhatsApp</strong>
-
-<span>
-<a href="https://wa.me/917254083381" target="_blank">
-WhatsApp पर message करें
-</a>
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">📍</div>
-
-<div>
-<strong>Shop Address</strong>
-
-<span>
-Bakhri, Bajpatti, Sitamarhi, Bihar - 843314
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-item">
-
-<div class="contact-icon">🛣️</div>
-
-<div>
-<strong>Location</strong>
-
-<span>
-Bajpatti – Pupri Road
-</span>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- INQUIRY FORM -->
-
-<div class="inquiry reveal">
-
-<h3>WhatsApp Inquiry</h3>
-
-<p>
-अपनी requirement भरें और message सीधे WhatsApp पर भेजें।
-</p>
-
-
-<form id="inquiryForm">
-
-<div class="form-grid">
-
-<div class="field">
-
-<label>आपका नाम</label>
-
-<input
-type="text"
-id="customerName"
-placeholder="अपना नाम लिखें"
-required
->
-
-</div>
-
-
-<div class="field">
-
-<label>Material / Service</label>
-
-<select id="material" required>
-
-<option value="">Select करें</option>
-
-<option>Cement</option>
-<option>Sariya / छड़िया</option>
-<option>Balu / Sand</option>
-<option>Bricks</option>
-<option>Gitti</option>
-<option>Tar / Binding Wire</option>
-<option>Construction Chemicals</option>
-<option>House Construction Contractor</option>
-<option>Other</option>
-
-</select>
-
-</div>
-
-
-<div class="field">
-
-<label>आपकी Requirement</label>
-
-<textarea
-id="message"
-placeholder="जैसे - 100 बोरी Cement चाहिए..."
-required
-></textarea>
-
-</div>
-
-
-<button
-type="submit"
-class="btn btn-whatsapp form-submit"
->
-💬 WhatsApp पर भेजें
-</button>
-
-</div>
-
-</form>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-<!-- ================= LOCATION ================= -->
-
-<section class="location">
+<!-- =========================
+     ENQUIRY FORM
+========================= -->
+
+<section class="enquiry" id="enquiry">
 
 <div class="container">
 
-<div class="location-box">
+    <div class="enquiry-box reveal">
 
-<div>
+        <div class="enquiry-head">
 
-<h3>📍 Maa Jagdamba Traders and Hardware</h3>
+            <h2>📝 Building Material Enquiry</h2>
 
-<p>
-Bakhri, Bajpatti, Sitamarhi, Bihar 843314 • Bajpatti–Pupri Road
-</p>
+            <p>
+                अपनी जरूरत की जानकारी भरें। Submit करने पर
+                WhatsApp में enquiry तैयार हो जाएगी।
+            </p>
+
+        </div>
+
+
+        <form id="enquiryForm">
+
+            <div class="form-grid">
+
+
+                <div class="field">
+                    <label>आपका नाम *</label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        placeholder="जैसे - Rahul Kumar"
+                        required
+                    >
+                </div>
+
+
+                <div class="field">
+                    <label>मोबाइल नंबर *</label>
+
+                    <input
+                        type="tel"
+                        id="customerPhone"
+                        placeholder="10 digit mobile number"
+                        pattern="[0-9]{10}"
+                        maxlength="10"
+                        required
+                    >
+                </div>
+
+
+                <div class="field">
+                    <label>आपको क्या चाहिए? *</label>
+
+                    <select id="material" required>
+
+                        <option value="">Material चुनें</option>
+
+                        <option>Cement</option>
+                        <option>Sariya / Steel</option>
+                        <option>Balu</option>
+                        <option>Bricks / ईंट</option>
+                        <option>Gitti</option>
+                        <option>Tar / Wire</option>
+                        <option>Construction Chemical</option>
+                        <option>कई प्रकार का Material</option>
+                        <option>अन्य</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>कितनी Quantity चाहिए?</label>
+
+                    <input
+                        type="text"
+                        id="quantity"
+                        placeholder="जैसे - 100 बोरी / 5 टन / 2 ट्रैक्टर"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>आप कहाँ रहते हैं? *</label>
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="गाँव / शहर / प्रखंड"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Delivery चाहिए?</label>
+
+                    <select id="delivery">
+
+                        <option>हाँ, Delivery चाहिए</option>
+                        <option>नहीं, दुकान से ले जाएंगे</option>
+                        <option>अभी निश्चित नहीं</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>आपको कब चाहिए?</label>
+
+                    <select id="when">
+
+                        <option>आज</option>
+                        <option>कल</option>
+                        <option>2-3 दिन में</option>
+                        <option>इस सप्ताह</option>
+                        <option>बाद में</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>Payment Preference</label>
+
+                    <select id="payment">
+
+                        <option>Cash</option>
+                        <option>UPI</option>
+                        <option>Bank Transfer</option>
+                        <option>जानकारी चाहिए</option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field full">
+
+                    <label>अतिरिक्त जानकारी / Requirement</label>
+
+                    <textarea
+                        id="message"
+                        placeholder="जैसे cement का कौन सा brand चाहिए, घर कितने sq ft का है, delivery location आदि..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <button type="submit" class="submit">
+                💬 WhatsApp पर Enquiry भेजें
+            </button>
+
+        </form>
+
+    </div>
 
 </div>
 
-<a
-class="btn btn-primary"
-href="https://www.google.com/maps/search/?api=1&query=Maa+Jagdamba+Traders+and+Hardware+Bakhri+Bajpatti+Sitamarhi+Bihar+843314"
-target="_blank"
->
-🗺️ Google Maps खोलें
-</a>
+</section>
 
-</div>
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+    <div class="section-head reveal">
+
+        <div>
+            <h2 class="section-title">
+                हमसे <span>संपर्क करें</span>
+            </h2>
+
+            <p class="section-desc">
+                Material की कीमत, availability या contractor service के लिए सीधे संपर्क करें।
+            </p>
+        </div>
+    </div>
+
+
+    <div class="contact-grid">
+
+
+        <div class="contact-card reveal">
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">📍</div>
+
+                <div>
+                    <strong>दुकान का पता</strong>
+
+                    <span>
+                        Maa Jagdamba Traders and Hardware<br>
+                        Bakhri (बखरी), Bajpatti<br>
+                        Sitamarhi, Bihar – 843314<br>
+                        Bajpatti – Pupri Road
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">☎️</div>
+
+                <div>
+                    <strong>Phone</strong>
+
+                    <span>
+                        <a href="tel:7254083381">7254083381</a><br>
+                        <a href="tel:9931506981">9931506981</a>
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div class="contact-item">
+
+                <div class="contact-icon">💬</div>
+
+                <div>
+                    <strong>WhatsApp</strong>
+
+                    <span>
+                        WhatsApp पर Material की requirement भेजें।
+                    </span>
+                </div>
+
+            </div>
+
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;">
+
+                <a
+                    href="tel:7254083381"
+                    class="btn btn-yellow"
+                >
+                    ☎ Call Now
+                </a>
+
+                <a
+                    href="https://wa.me/919931506981"
+                    target="_blank"
+                    class="btn btn-green"
+                >
+                    💬 WhatsApp
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="map-box reveal">
+
+            <!-- Google Maps Embed -->
+
+            <iframe
+                src="https://www.google.com/maps?q=Bakhri%20Bajpatti%20Sitamarhi%20Bihar%20843314&output=embed"
+                loading="lazy"
+                allowfullscreen>
+            </iframe>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Maa+Jagdamba+Traders+and+Hardware+Bakhri+Bajpatti+Sitamarhi+Bihar+843314"
+                target="_blank"
+            >
+                📍 Location देखें →
+            </a>
+
+        </div>
+
+    </div>
 
 </div>
 
@@ -2545,282 +1992,165 @@ target="_blank"
 </main>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-<footer class="footer">
+<footer>
 
 <div class="container">
 
-<div class="footer-grid">
+    <div class="footer-grid">
 
 
-<div>
+        <div>
 
-<div class="logo">
+            <div class="footer-logo">
+                Maa Jagdamba Traders <span>and Hardware</span>
+            </div>
 
-<div class="logo-mark">
-MJ
-</div>
+            <p>
+                Quality Building Material • Best Service •
+                Your Trusted Local Partner
+            </p>
 
-<div class="logo-text">
-<strong>Maa Jagdamba Traders and Hardware</strong>
-<small>Bakhri • Bajpatti • Sitamarhi</small>
-</div>
+            <p>
+                Bakhri, Bajpatti, Sitamarhi, Bihar – 843314
+            </p>
 
-</div>
-
-<p style="margin-top:18px;max-width:390px;">
-Building materials, construction requirements और house construction contractor service के लिए संपर्क करें।
-</p>
-
-</div>
+        </div>
 
 
-<div>
+        <div>
 
-<h3>Quick Links</h3>
+            <h3>Quick Links</h3>
 
-<div class="footer-links">
+            <div class="footer-links">
 
-<a href="#home">Home</a>
-<a href="#products">Materials</a>
-<a href="#services">Services</a>
-<a href="#gallery">Photos</a>
-<a href="#contact">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#enquiry">Enquiry</a>
+                <a href="#contact">Contact</a>
 
-</div>
+            </div>
 
-</div>
-
-
-<div>
-
-<h3>Contact</h3>
-
-<div class="footer-links">
-
-<a href="tel:7254083381">
-📞 7254083381
-</a>
-
-<a href="tel:9931506981">
-📞 9931506981
-</a>
-
-<a href="https://wa.me/917254083381" target="_blank">
-💬 WhatsApp
-</a>
-
-<p>
-📍 Bakhri, Bajpatti, Sitamarhi, Bihar 843314
-</p>
-
-</div>
-
-</div>
+        </div>
 
 
-</div>
+        <div>
+
+            <h3>Contact</h3>
+
+            <div class="footer-links">
+
+                <a href="tel:7254083381">
+                    ☎ 7254083381
+                </a>
+
+                <a href="tel:9931506981">
+                    ☎ 9931506981
+                </a>
+
+                <a href="https://wa.me/919931506981" target="_blank">
+                    💬 WhatsApp
+                </a>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=Maa+Jagdamba+Traders+and+Hardware+Bakhri+Bajpatti+Sitamarhi+Bihar+843314"
+                   target="_blank">
+                    📍 Google Maps
+                </a>
+
+            </div>
+
+        </div>
 
 
-<div class="footer-bottom">
+    </div>
 
-<span>
-© <span id="year"></span> Maa Jagdamba Traders and Hardware
-</span>
+    <hr style="border:0;border-top:1px solid rgba(255,255,255,.1);margin:30px 0 20px;">
 
-<span>
-Bakhri • Bajpatti • Sitamarhi
-</span>
-
-</div>
+    <p style="text-align:center;">
+        © <span id="year"></span> Maa Jagdamba Traders and Hardware.
+        All Rights Reserved.
+    </p>
 
 </div>
 
 </footer>
 
 
-<!-- ================= FLOATING BUTTONS ================= -->
+<!-- =========================
+     MOBILE CALL BAR
+========================= -->
 
-<div class="floating">
+<div class="mobile-bar">
 
-<a
-href="tel:7254083381"
-class="float-btn call"
-aria-label="Call"
->
-📞
-</a>
+    <a
+        href="tel:7254083381"
+        class="mobile-call"
+    >
+        ☎ Call Now
+    </a>
 
-<a
-href="https://wa.me/917254083381?text=Namaste%20Maa%20Jagdamba%20Traders%20and%20Hardware"
-target="_blank"
-class="float-btn whatsapp"
-aria-label="WhatsApp"
->
-💬
-</a>
-
-</div>
-
-
-<!-- ================= LIGHTBOX ================= -->
-
-<div class="lightbox" id="lightbox">
-
-<button class="lightbox-close" id="lightboxClose">
-×
-</button>
-
-<img id="lightboxImage" src="" alt="Gallery Image">
+    <a
+        href="https://wa.me/919931506981"
+        target="_blank"
+        class="mobile-whatsapp"
+    >
+        💬 WhatsApp
+    </a>
 
 </div>
 
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
 
 <script>
+
+/* =========================
+   LOADER
+========================= */
+
+window.addEventListener("load", function(){
+
+    setTimeout(function(){
+
+        document.getElementById("loader")
+        .classList.add("hide");
+
+    },800);
+
+});
+
 
 /* =========================
    MOBILE MENU
 ========================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+function toggleMenu(){
 
-menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
-});
+    document
+    .getElementById("navLinks")
+    .classList.toggle("active");
 
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", () => {
-        navLinks.classList.remove("show");
-    });
-
-});
+}
 
 
-/* =========================
-   PRODUCT FILTER
-========================= */
+/* Close menu after clicking link */
 
-const filters = document.querySelectorAll(".filter");
-const products = document.querySelectorAll(".product-card");
+document.querySelectorAll(".nav-links a").forEach(function(link){
 
-filters.forEach(filter => {
+    link.addEventListener("click",function(){
 
-    filter.addEventListener("click", () => {
-
-        filters.forEach(f => f.classList.remove("active"));
-
-        filter.classList.add("active");
-
-        const selected = filter.dataset.filter;
-
-        products.forEach(product => {
-
-            if(
-                selected === "all" ||
-                product.dataset.category === selected
-            ){
-
-                product.classList.remove("hidden");
-
-            }else{
-
-                product.classList.add("hidden");
-
-            }
-
-        });
+        document
+        .getElementById("navLinks")
+        .classList.remove("active");
 
     });
-
-});
-
-
-/* =========================
-   WHATSAPP FORM
-========================= */
-
-const inquiryForm = document.getElementById("inquiryForm");
-
-inquiryForm.addEventListener("submit", function(e){
-
-    e.preventDefault();
-
-    const name =
-        document.getElementById("customerName").value.trim();
-
-    const material =
-        document.getElementById("material").value;
-
-    const message =
-        document.getElementById("message").value.trim();
-
-
-    const text =
-`Namaste Maa Jagdamba Traders and Hardware,
-
-Mera naam: ${name}
-
-Material / Service:
-${material}
-
-Requirement:
-${message}
-
-Mujhe iske baare mein jaankari chahiye.`;
-
-    const url =
-        "https://wa.me/917254083381?text=" +
-        encodeURIComponent(text);
-
-    window.open(url, "_blank");
-
-});
-
-
-/* =========================
-   GALLERY LIGHTBOX
-========================= */
-
-const lightbox =
-    document.getElementById("lightbox");
-
-const lightboxImage =
-    document.getElementById("lightboxImage");
-
-const lightboxClose =
-    document.getElementById("lightboxClose");
-
-
-document.querySelectorAll(".gallery-item img").forEach(img => {
-
-    img.addEventListener("click", () => {
-
-        lightboxImage.src = img.src;
-
-        lightbox.classList.add("show");
-
-    });
-
-});
-
-
-lightboxClose.addEventListener("click", () => {
-
-    lightbox.classList.remove("show");
-
-});
-
-
-lightbox.addEventListener("click", (e) => {
-
-    if(e.target === lightbox){
-
-        lightbox.classList.remove("show");
-
-    }
 
 });
 
@@ -2831,13 +2161,15 @@ lightbox.addEventListener("click", (e) => {
 
 const observer = new IntersectionObserver(
 
-    entries => {
+    function(entries){
 
-        entries.forEach(entry => {
+        entries.forEach(function(entry){
 
             if(entry.isIntersecting){
 
-                entry.target.classList.add("visible");
+                entry.target.classList.add("show");
+
+                observer.unobserve(entry.target);
 
             }
 
@@ -2846,60 +2178,116 @@ const observer = new IntersectionObserver(
     },
 
     {
-        threshold:.10
+        threshold:0.12
     }
 
 );
 
 
-document.querySelectorAll(".reveal").forEach(el => {
+document.querySelectorAll(".reveal").forEach(function(element){
 
-    observer.observe(el);
+    observer.observe(element);
 
 });
 
 
 /* =========================
-   YEAR
+   WHATSAPP ENQUIRY
 ========================= */
 
-document.getElementById("year").textContent =
-    new Date().getFullYear();
+document
+.getElementById("enquiryForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const material =
+        document.getElementById("material").value;
+
+    const quantity =
+        document.getElementById("quantity").value.trim();
+
+    const location =
+        document.getElementById("location").value.trim();
+
+    const delivery =
+        document.getElementById("delivery").value;
+
+    const when =
+        document.getElementById("when").value;
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    const whatsappMessage =
+
+`🏗️ *NEW BUILDING MATERIAL ENQUIRY*
+
+━━━━━━━━━━━━━━━━━━
+
+👤 *Customer Details*
+
+नाम: ${name}
+मोबाइल: ${phone}
+स्थान: ${location}
+
+━━━━━━━━━━━━━━━━━━
+
+🧱 *Material Requirement*
+
+Material: ${material}
+Quantity: ${quantity || "बताया नहीं गया"}
+
+🚚 Delivery: ${delivery}
+📅 कब चाहिए: ${when}
+💳 Payment: ${payment}
+
+━━━━━━━━━━━━━━━━━━
+
+📝 *Additional Requirement*
+
+${message || "कोई अतिरिक्त जानकारी नहीं"}
+
+━━━━━━━━━━━━━━━━━━
+
+🏪 *Maa Jagdamba Traders and Hardware*
+📍 Bakhri, Bajpatti, Sitamarhi, Bihar – 843314
+
+यह enquiry website से भेजी गई है।`;
+
+
+    const whatsappURL =
+        "https://wa.me/919931506981?text="
+        + encodeURIComponent(whatsappMessage);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
+
+});
 
 
 /* =========================
-   HEADER SCROLL EFFECT
+   CURRENT YEAR
 ========================= */
 
-window.addEventListener("scroll", () => {
-
-    const header =
-        document.querySelector(".header");
-
-    if(window.scrollY > 30){
-
-        header.style.background =
-            "rgba(5,11,20,.97)";
-
-    }else{
-
-        header.style.background =
-            "rgba(8,17,31,.90)";
-
-    }
-
-});
+document.getElementById("year")
+.innerText = new Date().getFullYear();
 
 </script>
 
 </body>
-</html>   index.html
-19084.jpg
-19085.jpg
-19086.jpg
-19087.jpg
-19088.jpg
-19089.jpg
-20027.jpg
-20028.jpg
-20031.jpg
+</html>
